@@ -11,28 +11,29 @@ URL: **Insert your Heroku URL here**
 ## User Stories
 
 The following **required** functionality is complete:
-	
-	1 Experiences:
 
-* [ ] User can post experiences
-* [ ] Experience should have tittle, content, created date, recomended by
+	1 Sharing experiences:
+
+* [ ] User can share experiences
+* [ ] Experience should have tittle, content, created date, author, recommended by
 * [ ] Every experience belongs to a category
 * [ ] Experience could contain some photos
 * [ ] Experience could contain a map
-* [ ] Experience should be sorted by rate and relationship
-* [ ] Experience post should be reviewed by some moderator or could be reported by 		 the community in case of any violent (or not suitable) content
-	
-	2 Questions:
+* [ ] Experience could be reported by the community in case of any violence (or not suitable) content
+* Optional:
+* [ ] Experience post should be reviewed by some moderator (e.g. AI System)
+* [ ] A user level could be evaluated based on the quantity of good experiences he shared
 
-* [ ] User can post questions:
-* [ ] users can ask questions when they couldn’t find any experience related to 		  their problems 
-* [ ] Question should have tittle, content, created date
+	2 Asking questions (users can ask questions when they couldn’t find any experience related to their problems):
+
+* [ ] User can post questions
+* [ ] Question should have tittle, content, created date, author
 * [ ] Question belongs to a category
+* [ ] Question could have some tags
 * [ ] Question could contain some photos
 * [ ] Question could contain a map
-* [ ] The best answer (based on rating) will become an experience
-* [ ] Question should be reviewed by some moderator or could be reported by the    		  community in case of any violent (or not suitable) content
-* [ ] A user level could be evaluated based on the quantity of good experiences he 		  shared
+* [ ] The best answer (based on rating) will become an experience (answer)
+* [ ] Question should be reviewed by some moderator or could be reported by the community in case of any violence (or not suitable) content
 
 	3 Categories:
 
@@ -42,31 +43,31 @@ The following **required** functionality is complete:
 * [ ]  There is a sub menu categories in experience pages. User can click on a categories to filter experiences belong to categories. The sub item “all” will list all experiences without filtering category
 * [ ]  When user are selecting a category, the search result of experience must belong to that categories.
 * [ ]  Admin user have a page to create new category, another user cannot create it
+#Optional:
+* [ ] User can recommend a category that they want
 
 	4 Chat features:
 
-* [ ] An message page that has a list of incoming and sending messages, sorted in descending chronological.
-* [ ] The message have to be display without refreshing the page.
-* [ ] The messages have to be updated in all computeur in the same time.
+* [ ] A message page that has a list of incoming and sending messages, sorted in descending chronological.
+* [ ] The message has to be display without refreshing the page.
+* [ ] The messages has to be updated in all computer in the same time.
 * [ ] User gets an email when they receive a message, with a link to view the message.
-* [ ] User gets an email when a message they have sent is read with the time at which the message was read.
-* [ ] User can attach an image in the chat.
+* [ ] Messages should be grouped by sender
+#Optional
+* [ ] User have an option to not receive email when they have new messages
+* [ ] User can attach an image or emotional icons in the chat.
 
-	5 Support find friend from another social network:
+	5 Support finding friend from another social network:
 
-* [ ] Implement "Users" link takes the user to a page that lists all users. Next to/under each user,
- provide a link to "Add As Friend" to add the user to your list of friends. 
 * [ ] Get login with other social network like instagram or twitter.
-* [ ] If not login by facebook, attribute 30 random friends.
 * [ ] Users can send a request to a friend to join the website.
 * [ ] Random Friends can be choose directly regarding the preferences
 
 
-    6 Order result, friend’s experiences on the top:
-
+    6 Search experience
+* [ ] User can search for experiences by title, content, ...
 * [ ] Each post will have property of Author (or Creator). In list of the search result, the post which has author is in friend list will has higher priority to display in the top)
-* [ ] List of search results is found by search keywords.
-* [ ] Function to create the order of result list base on Author (or Creator)
+* [ ] User can order the result by rating, time, or most used
 
 	7 Contact me page:
 
@@ -75,7 +76,7 @@ The following **required** functionality is complete:
 
 
 
-## Video Walkthrough 
+## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
