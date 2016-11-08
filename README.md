@@ -34,7 +34,7 @@ The following **required** functionality is complete:
 * [ ] Question should be reviewed by some moderator or could be reported by the    		  community in case of any violent (or not suitable) content
 * [ ] A user level could be evaluated based on the quantity of good experiences he 		  shared
 
-	3 Category:
+	3 Categories:
 
 * [ ]  A category detail include name, image, description, some sample items in the category to give user better view about what is the category.
 * [ ]  When user post an experience, he has to choose the categories that his experience is related to. An experience can belong to more than 1 categories
@@ -43,7 +43,7 @@ The following **required** functionality is complete:
 * [ ]  When user are selecting a category, the search result of experience must belong to that categories.
 * [ ]  Admin user have a page to create new category, another user cannot create it
 
-	4 Chat feature:
+	4 Chat features:
 
 * [ ] An message page that has a list of incoming and sending messages, sorted in descending chronological.
 * [ ] The message have to be display without refreshing the page.
@@ -64,7 +64,7 @@ The following **required** functionality is complete:
 
     6 Order result, friend’s experiences on the top:
 
-* [ ] (Each post will have property of Author (or Creator). In list of the search result, the post which has author is in friend list will has higher priority to display in the top)
+* [ ] Each post will have property of Author (or Creator). In list of the search result, the post which has author is in friend list will has higher priority to display in the top)
 * [ ] List of search results is found by search keywords.
 * [ ] Function to create the order of result list base on Author (or Creator)
 
