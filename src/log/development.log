@@ -1,28 +1,27 @@
   [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
-  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
   [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
-  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", 2016-11-06 15:18:32 UTC], ["updated_at", 2016-11-06 15:18:32 UTC]]
-  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", 2016-11-12 01:45:36 UTC], ["updated_at", 2016-11-12 01:45:36 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
   [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
   [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
   [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
   [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
-Started GET "/" for ::1 at 2016-11-06 22:19:37 +0700
-Processing by Rails::WelcomeController#index as HTML
-  Parameters: {"internal"=>true}
-  Rendering /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/railties-5.0.0.1/lib/rails/templates/rails/welcome/index.html.erb
-  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/railties-5.0.0.1/lib/rails/templates/rails/welcome/index.html.erb (6.6ms)
-Completed 200 OK in 33ms (Views: 17.0ms | ActiveRecord: 0.0ms)
+Started GET "/" for ::1 at 2016-11-12 08:46:54 +0700
+Processing by TempController#index as HTML
+  Rendering temp/index.html.erb within layouts/application
+  Rendered temp/index.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 4546ms (Views: 4534.8ms | ActiveRecord: 0.0ms)
 
 
-  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
-Migrating to CreateUsers (20161110141139)
+  [1m[36mActiveRecord::SchemaMigration Load (7.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20161112014917)
   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
-  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "email" varchar NOT NULL, "encrypted_password" varchar(128) NOT NULL, "confirmation_token" varchar(128), "remember_token" varchar(128) NOT NULL)[0m
-  [1m[35m (0.6ms)[0m  [1m[34mselect sqlite_version(*)[0m
-  [1m[35m (0.8ms)[0m  [1m[35mCREATE  INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "email" varchar NOT NULL, "encrypted_password" varchar(128) NOT NULL, "confirmation_token" varchar(128), "remember_token" varchar(128) NOT NULL)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mselect sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE  INDEX "index_users_on_email" ON "users" ("email")[0m
   [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
             FROM sqlite_master
             WHERE name='index_users_on_email' AND type='index'
@@ -31,13 +30,13 @@ Migrating to CreateUsers (20161110141139)
             FROM sqlite_temp_master
             WHERE name='index_users_on_email' AND type='index'
 [0m
-  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_users_on_remember_token" ON "users" ("remember_token")[0m
-  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20161110141139"]]
-  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
-  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
-  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
-  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
-  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_users_on_remember_token" ON "users" ("remember_token")[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20161112014917"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
   [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
             FROM sqlite_master
             WHERE name='index_users_on_remember_token' AND type='index'
@@ -54,110 +53,61 @@ Migrating to CreateUsers (20161110141139)
             FROM sqlite_temp_master
             WHERE name='index_users_on_email' AND type='index'
 [0m
-Started GET "/" for ::1 at 2016-11-10 21:18:52 +0700
+Started GET "/" for ::1 at 2016-11-12 08:50:43 +0700
   [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
-Processing by TestsController#index as HTML
-Redirected to http://localhost:3000/sign_in
-Filter chain halted as :require_login rendered or redirected
-Completed 302 Found in 34ms (ActiveRecord: 0.0ms)
+Processing by TempController#index as HTML
+Completed 500 Internal Server Error in 91ms (ActiveRecord: 0.0ms)
 
 
-Started GET "/sign_in" for ::1 at 2016-11-10 21:18:52 +0700
-Processing by Clearance::SessionsController#new as HTML
-  Rendering /Users/VenNguyen/.rvm/gems/ruby-2.3.1/gems/clearance-1.15.1/app/views/sessions/new.html.erb within layouts/application
-  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1/gems/clearance-1.15.1/app/views/sessions/_form.html.erb (26.7ms)
-  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1/gems/clearance-1.15.1/app/views/sessions/new.html.erb within layouts/application (39.2ms)
-Started GET "/" for ::1 at 2016-11-10 21:18:53 +0700
-Processing by TestsController#index as HTML
-Redirected to http://localhost:3000/sign_in
-Filter chain halted as :require_login rendered or redirected
-Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
-
-
-Started GET "/sign_in" for ::1 at 2016-11-10 21:18:53 +0700
-Processing by Clearance::SessionsController#new as HTML
-  Rendering /Users/VenNguyen/.rvm/gems/ruby-2.3.1/gems/clearance-1.15.1/app/views/sessions/new.html.erb within layouts/application
-  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1/gems/clearance-1.15.1/app/views/sessions/_form.html.erb (2.2ms)
-  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1/gems/clearance-1.15.1/app/views/sessions/new.html.erb within layouts/application (8.0ms)
-Completed 200 OK in 6855ms (Views: 6853.1ms | ActiveRecord: 0.0ms)
-
-
-Completed 200 OK in 7327ms (Views: 7326.0ms | ActiveRecord: 0.0ms)
-
-
-Started GET "/" for ::1 at 2016-11-10 21:19:00 +0700
-Processing by TestsController#index as HTML
-Redirected to http://localhost:3000/sign_in
-Filter chain halted as :require_login rendered or redirected
-Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
-
-
-Started GET "/sign_in" for ::1 at 2016-11-10 21:19:00 +0700
-Processing by Clearance::SessionsController#new as HTML
-  Rendering /Users/VenNguyen/.rvm/gems/ruby-2.3.1/gems/clearance-1.15.1/app/views/sessions/new.html.erb within layouts/application
-  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1/gems/clearance-1.15.1/app/views/sessions/_form.html.erb (5.9ms)
-  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1/gems/clearance-1.15.1/app/views/sessions/new.html.erb within layouts/application (9.9ms)
-Completed 200 OK in 61ms (Views: 60.4ms | ActiveRecord: 0.0ms)
-
-
-Started POST "/session" for ::1 at 2016-11-10 21:19:06 +0700
-Processing by Clearance::SessionsController#create as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
-  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
-  Rendering /Users/VenNguyen/.rvm/gems/ruby-2.3.1/gems/clearance-1.15.1/app/views/sessions/new.html.erb within layouts/application
-  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1/gems/clearance-1.15.1/app/views/sessions/_form.html.erb (2.6ms)
-  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1/gems/clearance-1.15.1/app/views/sessions/new.html.erb within layouts/application (6.3ms)
-Completed 401 Unauthorized in 62ms (Views: 47.9ms | ActiveRecord: 1.3ms)
-
-
-Started GET "/sign_up" for ::1 at 2016-11-10 21:19:10 +0700
-Processing by Clearance::UsersController#new as HTML
-  Rendering /Users/VenNguyen/.rvm/gems/ruby-2.3.1/gems/clearance-1.15.1/app/views/users/new.html.erb within layouts/application
-  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1/gems/clearance-1.15.1/app/views/users/_form.html.erb (1.9ms)
-  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1/gems/clearance-1.15.1/app/views/users/new.html.erb within layouts/application (12.1ms)
-Completed 200 OK in 70ms (Views: 58.8ms | ActiveRecord: 0.6ms)
-
-
-Started POST "/users" for ::1 at 2016-11-10 21:19:20 +0700
-Processing by Clearance::UsersController#create as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"abc@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Sign up"}
-  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
-  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "abc@gmail.com"], ["LIMIT", 1]]
-  [1m[35mSQL (2.9ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "email", "encrypted_password", "remember_token") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", 2016-11-10 14:19:20 UTC], ["updated_at", 2016-11-10 14:19:20 UTC], ["email", "abc@gmail.com"], ["encrypted_password", "$2a$10$ae6lWiEb2NZfV6wDjB7wMumFkaAZH/Vh.gVXDe4TeagjAFBO/v0Ke"], ["remember_token", "2a8871eb809760b23853dd3d1880f8406c6d17b8"]]
-  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
-Redirected to http://localhost:3000/
-Completed 302 Found in 142ms (ActiveRecord: 4.2ms)
-
-
-Started GET "/" for ::1 at 2016-11-10 21:19:20 +0700
-Processing by TestsController#index as HTML
-  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "2a8871eb809760b23853dd3d1880f8406c6d17b8"], ["LIMIT", 1]]
-  Rendering tests/index.html.erb within layouts/application
-  Rendered tests/index.html.erb within layouts/application (0.6ms)
-Completed 200 OK in 48ms (Views: 41.0ms | ActiveRecord: 0.4ms)
-
-
-Started GET "/sign_up" for ::1 at 2016-11-10 21:19:37 +0700
-Processing by Clearance::UsersController#new as HTML
-  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "2a8871eb809760b23853dd3d1880f8406c6d17b8"], ["LIMIT", 1]]
-Redirected to http://localhost:3000/
-Filter chain halted as :redirect_signed_in_users rendered or redirected
-Completed 302 Found in 3ms (ActiveRecord: 0.6ms)
-
-
-Started GET "/" for ::1 at 2016-11-10 21:19:37 +0700
-Processing by TestsController#index as HTML
-  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "2a8871eb809760b23853dd3d1880f8406c6d17b8"], ["LIMIT", 1]]
-  Rendering tests/index.html.erb within layouts/application
-  Rendered tests/index.html.erb within layouts/application (0.4ms)
-Completed 200 OK in 46ms (Views: 41.4ms | ActiveRecord: 0.2ms)
-
-
-Started GET "/sessiond" for ::1 at 2016-11-10 21:20:45 +0700
   
-ActionController::RoutingError (No route matches [GET] "/sessiond"):
+NoMethodError (undefined method `required_login' for #<TempController:0x007fabca938410>
+Did you mean?  require_or_load):
   
-actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:382:in `block in make_lambda'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:169:in `block (2 levels) in halting'
+actionpack (5.0.0.1) lib/abstract_controller/callbacks.rb:12:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:170:in `block in halting'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:454:in `block in call'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:454:in `each'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:454:in `call'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:101:in `__run_callbacks__'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:750:in `_run_process_action_callbacks'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.0.1) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.0.0.1) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.0.0.1) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.0.0.1) lib/active_support/notifications.rb:164:in `block in instrument'
+activesupport (5.0.0.1) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.0.0.1) lib/active_support/notifications.rb:164:in `instrument'
+actionpack (5.0.0.1) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.0.0.1) lib/action_controller/metal/params_wrapper.rb:248:in `process_action'
+activerecord (5.0.0.1) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+actionpack (5.0.0.1) lib/abstract_controller/base.rb:126:in `process'
+actionview (5.0.0.1) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.0.0.1) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (5.0.0.1) lib/action_controller/metal.rb:262:in `dispatch'
+actionpack (5.0.0.1) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (5.0.0.1) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.0.0.1) lib/action_dispatch/journey/router.rb:39:in `block in serve'
+actionpack (5.0.0.1) lib/action_dispatch/journey/router.rb:26:in `each'
+actionpack (5.0.0.1) lib/action_dispatch/journey/router.rb:26:in `serve'
+actionpack (5.0.0.1) lib/action_dispatch/routing/route_set.rb:725:in `call'
+clearance (1.15.1) lib/clearance/rack_session.rb:23:in `call'
+rack (2.0.1) lib/rack/etag.rb:25:in `call'
+rack (2.0.1) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.1) lib/rack/head.rb:12:in `call'
+rack (2.0.1) lib/rack/session/abstract/id.rb:222:in `context'
+rack (2.0.1) lib/rack/session/abstract/id.rb:216:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.0.0.1) lib/active_record/migration.rb:552:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
 web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
 web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
 web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
@@ -183,199 +133,91 @@ puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
 puma (3.6.0) lib/puma/server.rb:415:in `process_client'
 puma (3.6.0) lib/puma/server.rb:275:in `block in run'
 puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
-  Rendering /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
-  Rendering /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
-  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
-  Rendered collection of /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [13 times] (20.1ms)
-  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (4.5ms)
-  Rendering /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
-  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.3ms)
-  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (169.6ms)
-Started GET "/sessiond" for ::1 at 2016-11-10 21:39:20 +0700
-  
-ActionController::RoutingError (No route matches [GET] "/sessiond"):
-  
-actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
-web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
-web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
-web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
-web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
-actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
-railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
-railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
-activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
-activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
-activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
-railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
-sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
-actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
-rack (2.0.1) lib/rack/method_override.rb:22:in `call'
-rack (2.0.1) lib/rack/runtime.rb:22:in `call'
-activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
-actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
-actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
-rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
-railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
-puma (3.6.0) lib/puma/configuration.rb:225:in `call'
-puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
-puma (3.6.0) lib/puma/server.rb:415:in `process_client'
-puma (3.6.0) lib/puma/server.rb:275:in `block in run'
-puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
-  Rendering /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
-  Rendering /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
-  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
-  Rendered collection of /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [13 times] (9.2ms)
-  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.2ms)
-  Rendering /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
-  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
-  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (133.2ms)
-Started GET "/" for ::1 at 2016-11-10 21:39:21 +0700
-Processing by TestsController#index as HTML
-  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "2a8871eb809760b23853dd3d1880f8406c6d17b8"], ["LIMIT", 1]]
-  Rendering tests/index.html.erb within layouts/application
-  Rendered tests/index.html.erb within layouts/application (0.6ms)
-Completed 200 OK in 62ms (Views: 49.6ms | ActiveRecord: 1.1ms)
-
-
-Started GET "/" for ::1 at 2016-11-10 21:39:21 +0700
-Processing by TestsController#index as HTML
-  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "2a8871eb809760b23853dd3d1880f8406c6d17b8"], ["LIMIT", 1]]
-  Rendering tests/index.html.erb within layouts/application
-  Rendered tests/index.html.erb within layouts/application (0.6ms)
-Completed 200 OK in 38ms (Views: 33.2ms | ActiveRecord: 0.4ms)
-
-
-Started DELETE "/sign_out" for ::1 at 2016-11-10 21:39:23 +0700
-Processing by Clearance::SessionsController#destroy as HTML
-  Parameters: {"authenticity_token"=>"[FILTERED]"}
-  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "2a8871eb809760b23853dd3d1880f8406c6d17b8"], ["LIMIT", 1]]
-  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
-  [1m[35mSQL (1.4ms)[0m  [1m[33mUPDATE "users" SET "remember_token" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["remember_token", "bc87099d9ae0465fb4bcc621ac919e7981cb798c"], ["updated_at", 2016-11-10 14:39:23 UTC], ["id", 1]]
-  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
-Redirected to http://localhost:3000/sign_in
-Completed 302 Found in 9ms (ActiveRecord: 2.7ms)
-
-
-Started GET "/sign_in" for ::1 at 2016-11-10 21:39:23 +0700
-Processing by Clearance::SessionsController#new as HTML
-  Rendering sessions/new.html.erb within layouts/application
-  Rendered sessions/_form.html.erb (2.0ms)
-  Rendered sessions/new.html.erb within layouts/application (5.1ms)
-Completed 200 OK in 36ms (Views: 35.2ms | ActiveRecord: 0.0ms)
-
-
-Started GET "/sign_in" for ::1 at 2016-11-10 21:42:04 +0700
-Processing by Clearance::SessionsController#new as HTML
-  Rendering sessions/new.html.erb within layouts/application
-  Rendered sessions/_form.html.erb (1.7ms)
-  Rendered sessions/new.html.erb within layouts/application (3.5ms)
-Completed 200 OK in 31ms (Views: 30.1ms | ActiveRecord: 0.0ms)
-
-
-Started GET "/sign_in" for ::1 at 2016-11-10 21:42:05 +0700
-Processing by Clearance::SessionsController#new as HTML
-  Rendering sessions/new.html.erb within layouts/application
-  Rendered sessions/_form.html.erb (1.9ms)
-  Rendered sessions/new.html.erb within layouts/application (3.9ms)
-Completed 200 OK in 24ms (Views: 23.8ms | ActiveRecord: 0.0ms)
-
-
-Started GET "/sign_in" for ::1 at 2016-11-10 21:42:23 +0700
-Processing by Clearance::SessionsController#new as HTML
-  Rendering sessions/new.html.erb within layouts/application
-  Rendered sessions/_form.html.erb (1.6ms)
-  Rendered sessions/new.html.erb within layouts/application (3.4ms)
-Completed 200 OK in 24ms (Views: 23.5ms | ActiveRecord: 0.0ms)
-
-
-Started GET "/sign_in" for ::1 at 2016-11-10 21:42:38 +0700
-Processing by Clearance::SessionsController#new as HTML
-  Rendering sessions/new.html.erb within layouts/application
-  Rendered sessions/_form.html.erb (1.7ms)
-  Rendered sessions/new.html.erb within layouts/application (3.6ms)
-Completed 200 OK in 26ms (Views: 25.5ms | ActiveRecord: 0.0ms)
-
-
-Started GET "/sign_in" for ::1 at 2016-11-10 21:43:28 +0700
-Processing by Clearance::SessionsController#new as HTML
-  Rendering sessions/new.html.erb within layouts/application
-  Rendered sessions/_form.html.erb (3.0ms)
-  Rendered sessions/new.html.erb within layouts/application (4.8ms)
-Completed 200 OK in 29ms (Views: 28.8ms | ActiveRecord: 0.0ms)
-
-
-Started GET "/sign_in" for ::1 at 2016-11-10 21:43:29 +0700
-Processing by Clearance::SessionsController#new as HTML
-  Rendering sessions/new.html.erb within layouts/application
-  Rendered sessions/_form.html.erb (1.7ms)
-  Rendered sessions/new.html.erb within layouts/application (3.4ms)
-Completed 200 OK in 25ms (Views: 24.2ms | ActiveRecord: 0.0ms)
-
-
-Started GET "/sign_in" for ::1 at 2016-11-10 21:44:43 +0700
-Processing by Clearance::SessionsController#new as HTML
-  Rendering sessions/new.html.erb within layouts/application
-  Rendered sessions/_form.html.erb (2.1ms)
-  Rendered sessions/new.html.erb within layouts/application (4.4ms)
-Completed 200 OK in 25ms (Views: 24.5ms | ActiveRecord: 0.0ms)
-
-
-Started GET "/sign_in" for ::1 at 2016-11-10 21:44:44 +0700
-Processing by Clearance::SessionsController#new as HTML
-  Rendering sessions/new.html.erb within layouts/application
-  Rendered sessions/_form.html.erb (1.3ms)
-  Rendered sessions/new.html.erb within layouts/application (3.1ms)
-Completed 200 OK in 23ms (Views: 22.5ms | ActiveRecord: 0.0ms)
-
-
-Started GET "/sign_in" for ::1 at 2016-11-10 21:45:29 +0700
-Processing by Clearance::SessionsController#new as HTML
-  Rendering sessions/new.html.erb within layouts/application
-  Rendered sessions/_form.html.erb (9.3ms)
-  Rendered sessions/new.html.erb within layouts/application (11.2ms)
-Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.0ms)
-
-
-  
-SyntaxError (/Volumes/Data/projects/eGuru/src/app/views/sessions/_form.html.erb:14: syntax error, unexpected tLABEL, expecting '='
-...er.append=( form.submit, class:"btn btn-primary" );@output_b...
-...                               ^):
-  
-app/views/sessions/_form.html.erb:14: syntax error, unexpected tLABEL, expecting '='
-app/views/sessions/new.html.erb:4:in `_app_views_sessions_new_html_erb___501219919807395775_70324124321200'
   Rendering /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
   Rendering /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
-  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (8.0ms)
+  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.2ms)
   Rendering /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
-  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
   Rendering /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
-  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
-  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (97.2ms)
-Started GET "/sign_in" for ::1 at 2016-11-10 21:45:53 +0700
+  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (156.4ms)
+Started GET "/" for ::1 at 2016-11-12 08:51:00 +0700
+Processing by TempController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "e0867b4069253e2172d5f3f29274a7d95549f767"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "e0867b4069253e2172d5f3f29274a7d95549f767"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/sign_in
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 51ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/sign_in" for ::1 at 2016-11-12 08:51:00 +0700
 Processing by Clearance::SessionsController#new as HTML
-  Rendering sessions/new.html.erb within layouts/application
-  Rendered sessions/_form.html.erb (1.1ms)
-  Rendered sessions/new.html.erb within layouts/application (2.8ms)
-Completed 200 OK in 21ms (Views: 20.1ms | ActiveRecord: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "e0867b4069253e2172d5f3f29274a7d95549f767"], ["LIMIT", 1]]
+  Rendering /Users/VenNguyen/.rvm/gems/ruby-2.3.1/gems/clearance-1.15.1/app/views/sessions/new.html.erb within layouts/application
+  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1/gems/clearance-1.15.1/app/views/sessions/_form.html.erb (17.8ms)
+  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1/gems/clearance-1.15.1/app/views/sessions/new.html.erb within layouts/application (21.6ms)
+Completed 200 OK in 395ms (Views: 392.8ms | ActiveRecord: 0.2ms)
 
 
-Started POST "/session" for ::1 at 2016-11-10 21:46:29 +0700
+Started POST "/session" for ::1 at 2016-11-12 08:51:30 +0700
 Processing by Clearance::SessionsController#create as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"abc", "password"=>"[FILTERED]"}, "commit"=>"Signin"}
-  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "abc"], ["LIMIT", 1]]
-  Rendering sessions/new.html.erb within layouts/application
-  Rendered sessions/_form.html.erb (1.2ms)
-  Rendered sessions/new.html.erb within layouts/application (2.9ms)
-Completed 401 Unauthorized in 30ms (Views: 26.8ms | ActiveRecord: 0.5ms)
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"abc@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "abc@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "e0867b4069253e2172d5f3f29274a7d95549f767"], ["LIMIT", 1]]
+  Rendering /Users/VenNguyen/.rvm/gems/ruby-2.3.1/gems/clearance-1.15.1/app/views/sessions/new.html.erb within layouts/application
+  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1/gems/clearance-1.15.1/app/views/sessions/_form.html.erb (2.3ms)
+  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1/gems/clearance-1.15.1/app/views/sessions/new.html.erb within layouts/application (6.1ms)
+Completed 401 Unauthorized in 49ms (Views: 43.0ms | ActiveRecord: 0.7ms)
 
 
-Started POST "/session" for ::1 at 2016-11-10 21:46:33 +0700
+Started POST "/session" for ::1 at 2016-11-12 08:51:40 +0700
 Processing by Clearance::SessionsController#create as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Signin"}
-  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
-  Rendering sessions/new.html.erb within layouts/application
-  Rendered sessions/_form.html.erb (1.5ms)
-  Rendered sessions/new.html.erb within layouts/application (3.4ms)
-Completed 401 Unauthorized in 26ms (Views: 24.2ms | ActiveRecord: 0.2ms)
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"abc@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "abc@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "e0867b4069253e2172d5f3f29274a7d95549f767"], ["LIMIT", 1]]
+  Rendering /Users/VenNguyen/.rvm/gems/ruby-2.3.1/gems/clearance-1.15.1/app/views/sessions/new.html.erb within layouts/application
+  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1/gems/clearance-1.15.1/app/views/sessions/_form.html.erb (1.5ms)
+  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1/gems/clearance-1.15.1/app/views/sessions/new.html.erb within layouts/application (4.6ms)
+Completed 401 Unauthorized in 45ms (Views: 42.0ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/session" for ::1 at 2016-11-12 08:51:50 +0700
+Processing by Clearance::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"abc@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "abc@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "e0867b4069253e2172d5f3f29274a7d95549f767"], ["LIMIT", 1]]
+  Rendering /Users/VenNguyen/.rvm/gems/ruby-2.3.1/gems/clearance-1.15.1/app/views/sessions/new.html.erb within layouts/application
+  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1/gems/clearance-1.15.1/app/views/sessions/_form.html.erb (1.6ms)
+  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1/gems/clearance-1.15.1/app/views/sessions/new.html.erb within layouts/application (4.5ms)
+Completed 401 Unauthorized in 44ms (Views: 41.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/sign_up" for ::1 at 2016-11-12 08:51:55 +0700
+Processing by Clearance::UsersController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "e0867b4069253e2172d5f3f29274a7d95549f767"], ["LIMIT", 1]]
+  Rendering /Users/VenNguyen/.rvm/gems/ruby-2.3.1/gems/clearance-1.15.1/app/views/users/new.html.erb within layouts/application
+  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1/gems/clearance-1.15.1/app/views/users/_form.html.erb (2.0ms)
+  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1/gems/clearance-1.15.1/app/views/users/new.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 94ms (Views: 85.6ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/users" for ::1 at 2016-11-12 08:52:02 +0700
+Processing by Clearance::UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"abc@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "e0867b4069253e2172d5f3f29274a7d95549f767"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "abc@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "email", "encrypted_password", "remember_token") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", 2016-11-12 01:52:03 UTC], ["updated_at", 2016-11-12 01:52:03 UTC], ["email", "abc@gmail.com"], ["encrypted_password", "$2a$10$cl8Q4hhs242/ZuNWfpr.YOkh8zzJYtBDlBfU4OS.aOcRWBlyG1a2K"], ["remember_token", "6d4369d344f1d837ff75fd32018ab51f12b2a5ff"]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 141ms (ActiveRecord: 3.2ms)
+
+
+Started GET "/" for ::1 at 2016-11-12 08:52:03 +0700
+Processing by TempController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["remember_token", "6d4369d344f1d837ff75fd32018ab51f12b2a5ff"], ["LIMIT", 1]]
+  Rendering temp/index.html.erb within layouts/application
+  Rendered temp/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 35ms (Views: 31.0ms | ActiveRecord: 0.2ms)
 
 
