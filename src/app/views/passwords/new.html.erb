@@ -1,4 +1,4 @@
-<div id="clearance" class="password-reset">
+<div id="clearance" class="container password-reset">
   <h2><%= t(".title") %></h2>
 
   <p><%= t(".description") %></p>
@@ -10,7 +10,7 @@
     </div>
 
     <div class="submit-field">
-      <%= form.submit %>
+      <%= form.submit "Reset password", class:"btn btn-primary" %>
     </div>
   <% end %>
 </div>
