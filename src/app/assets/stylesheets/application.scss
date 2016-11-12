@@ -13,4 +13,22 @@
  *= require_tree .
  *= require_self
  */
- @import 'bootstrap'
+ @import 'bootstrap';
+
+
+body {
+    background-color: #FFF59D;
+}
+
+/*.user-sign-form {
+	background-image: url('http://i.imgur.com/8pjYPuX.jpg');
+}
+*/
+.navbar-content{
+	margin-left: 30px;
+	margin-right: 70px;
+}
+
+.forgot-password{
+	padding-left: 0px;
+}
