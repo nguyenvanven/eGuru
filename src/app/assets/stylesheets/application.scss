@@ -15,20 +15,53 @@
  */
  @import 'bootstrap';
 
+$content-height: 93vh;
 
 body {
     background-color: #FFF59D;
 }
 
+#header {
+    box-shadow: 0px 2px 1px 0px rgba(102, 93, 93, 0.15);
+}
 /*.user-sign-form {
 	background-image: url('http://i.imgur.com/8pjYPuX.jpg');
 }
 */
 .navbar-content{
-	margin-left: 30px;
+	margin-left: 60px;
 	margin-right: 70px;
 }
 
 .forgot-password{
 	padding-left: 0px;
+}
+
+.eguru-logo{
+	height: 10vh;
+	margin-bottom: -3vh;
+}
+
+.content {
+	height: $content-height;
+	margin-top: -5px;
+}
+
+footer{
+	border-top: 1px solid #dedede;
+	background-color: #f7f7f7;
+	padding-bottom: 30px;
+	padding-top: 30px;
+}
+
+
+.user-sign-form{
+	background-color: white;
+    margin-top: 20vh;
+    margin-bottom: 12px;
+    border-radius: 3px;
+    border: 1px solid #dbd8d8;
+    border-width: 1px 1px 2px 1px;
+    box-shadow: 0 1px 0 #e7e7e7;
+    padding: 50px;
 }
