@@ -5,18 +5,39 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   <%= csrf_meta_tag %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 </head>
 <body>
   <div id="header">
-    <% if signed_in? -%>
-      <%= button_to t(".sign_out"), sign_out_path, method: :delete %>
-    <% else -%>
-      <%= link_to t(".sign_in"), sign_in_path %>
-    <% end -%>
+      <nav class="navbar navbar-light bg-faded">
+        <div class="navbar-content">
+        <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#navbar-header" aria-controls="navbar-header" aria-expanded="false" aria-label="Toggle navigation"></button>
+        <div class="collapse navbar-toggleable-xs" id="navbar-header">
+          <%= link_to 'eGuru', root_path, class: 'navbar-brand' %>
+
+          <ul class="nav navbar-nav">
+            <li class="nav-item float-xs-right">
+              <% if signed_in? -%>
+                <%= button_to t(".sign_out"), sign_out_path, method: :delete %>
+              <% else -%>
+                <%= link_to t(".sign_in"), sign_in_path %>
+              <% end -%>
+            </li>
+          </ul>
+        </div>
+        </div>
+      </nav> <!-- /navbar -->
+      
+    </div>
+
+  <div class="container content jumbotron">
+    
+
+    <%= flash_messages %>
+
+    <%= yield %>
   </div>
-
-  <%= flash_messages %>
-
-  <%= yield %>
+  
 </body>
 </html>
