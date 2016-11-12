@@ -16,3 +16,8 @@
 //= require tether
 //= require bootstrap
 //= require_tree .
+
+$(".nav li a").on("click", function(){
+   $(".nav").find(".active").removeClass("active");
+   $(this).parent().addClass("active");
+});
