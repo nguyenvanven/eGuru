@@ -1523,3 +1523,510 @@ Processing by Clearance::SessionsController#new as HTML
 Completed 200 OK in 125ms (Views: 124.9ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/sign_in" for ::1 at 2016-11-12 11:16:53 +0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (2.0ms)
+  Rendered sessions/new.html.erb within layouts/application (4.8ms)
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'tether' with type 'application/javascript'
+Checked in these paths: 
+  /Volumes/Whale/research/ror/final_project/teamgit/eGuru/src/app/assets/config
+  /Volumes/Whale/research/ror/final_project/teamgit/eGuru/src/app/assets/images
+  /Volumes/Whale/research/ror/final_project/teamgit/eGuru/src/app/assets/javascripts
+  /Volumes/Whale/research/ror/final_project/teamgit/eGuru/src/app/assets/stylesheets
+  /Volumes/Whale/research/ror/final_project/teamgit/eGuru/src/vendor/assets/javascripts
+  /Volumes/Whale/research/ror/final_project/teamgit/eGuru/src/vendor/assets/stylesheets
+  /Users/Hung/.rvm/gems/ruby-2.3.1/gems/jquery-rails-4.2.1/vendor/assets/javascripts
+  /Users/Hung/.rvm/gems/ruby-2.3.1/gems/coffee-rails-4.2.1/lib/assets/javascripts
+  /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actioncable-5.0.0.1/lib/assets/compiled
+  /Users/Hung/.rvm/gems/ruby-2.3.1/gems/turbolinks-source-5.0.0/lib/assets/javascripts
+  /Users/Hung/.rvm/gems/ruby-2.3.1/gems/bootstrap-4.0.0.alpha5/assets/stylesheets
+  /Users/Hung/.rvm/gems/ruby-2.3.1/gems/bootstrap-4.0.0.alpha5/assets/javascripts):
+    2: <html>
+    3: <head>
+    4: <title>EGuru</title>
+    5:   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    6:   <%= csrf_meta_tag %>
+    7:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8: </head>
+  
+app/assets/javascripts/application.js:17
+app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb__4326073293443662439_70167374504180'
+  Rendering /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (8.4ms)
+  Rendering /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendering /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (88.5ms)
+Started GET "/sign_in" for ::1 at 2016-11-12 11:17:17 +0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (2.3ms)
+  Rendered sessions/new.html.erb within layouts/application (4.9ms)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'tether' with type 'application/javascript'
+Checked in these paths: 
+  /Volumes/Whale/research/ror/final_project/teamgit/eGuru/src/app/assets/config
+  /Volumes/Whale/research/ror/final_project/teamgit/eGuru/src/app/assets/images
+  /Volumes/Whale/research/ror/final_project/teamgit/eGuru/src/app/assets/javascripts
+  /Volumes/Whale/research/ror/final_project/teamgit/eGuru/src/app/assets/stylesheets
+  /Volumes/Whale/research/ror/final_project/teamgit/eGuru/src/vendor/assets/javascripts
+  /Volumes/Whale/research/ror/final_project/teamgit/eGuru/src/vendor/assets/stylesheets
+  /Users/Hung/.rvm/gems/ruby-2.3.1/gems/jquery-rails-4.2.1/vendor/assets/javascripts
+  /Users/Hung/.rvm/gems/ruby-2.3.1/gems/coffee-rails-4.2.1/lib/assets/javascripts
+  /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actioncable-5.0.0.1/lib/assets/compiled
+  /Users/Hung/.rvm/gems/ruby-2.3.1/gems/turbolinks-source-5.0.0/lib/assets/javascripts
+  /Users/Hung/.rvm/gems/ruby-2.3.1/gems/bootstrap-4.0.0.alpha5/assets/stylesheets
+  /Users/Hung/.rvm/gems/ruby-2.3.1/gems/bootstrap-4.0.0.alpha5/assets/javascripts):
+    2: <html>
+    3: <head>
+    4: <title>EGuru</title>
+    5:   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    6:   <%= csrf_meta_tag %>
+    7:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8: </head>
+  
+app/assets/javascripts/application.js:17
+app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb__4326073293443662439_70167447214620'
+  Rendering /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.2ms)
+  Rendering /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendering /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (81.6ms)
+Started GET "/sign_in" for ::1 at 2016-11-12 11:17:37 +0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (2.4ms)
+  Rendered sessions/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 137ms (Views: 136.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for ::1 at 2016-11-12 11:17:52 +0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (3.1ms)
+  Rendered sessions/new.html.erb within layouts/application (6.4ms)
+Completed 500 Internal Server Error in 78ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'tether' with type 'application/javascript'
+Checked in these paths: 
+  /Volumes/Whale/research/ror/final_project/teamgit/eGuru/src/app/assets/config
+  /Volumes/Whale/research/ror/final_project/teamgit/eGuru/src/app/assets/images
+  /Volumes/Whale/research/ror/final_project/teamgit/eGuru/src/app/assets/javascripts
+  /Volumes/Whale/research/ror/final_project/teamgit/eGuru/src/app/assets/stylesheets
+  /Volumes/Whale/research/ror/final_project/teamgit/eGuru/src/vendor/assets/javascripts
+  /Volumes/Whale/research/ror/final_project/teamgit/eGuru/src/vendor/assets/stylesheets
+  /Users/Hung/.rvm/gems/ruby-2.3.1/gems/jquery-rails-4.2.1/vendor/assets/javascripts
+  /Users/Hung/.rvm/gems/ruby-2.3.1/gems/coffee-rails-4.2.1/lib/assets/javascripts
+  /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actioncable-5.0.0.1/lib/assets/compiled
+  /Users/Hung/.rvm/gems/ruby-2.3.1/gems/turbolinks-source-5.0.0/lib/assets/javascripts
+  /Users/Hung/.rvm/gems/ruby-2.3.1/gems/bootstrap-4.0.0.alpha5/assets/stylesheets
+  /Users/Hung/.rvm/gems/ruby-2.3.1/gems/bootstrap-4.0.0.alpha5/assets/javascripts):
+    2: <html>
+    3: <head>
+    4: <title>EGuru</title>
+    5:   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    6:   <%= csrf_meta_tag %>
+    7:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8: </head>
+  
+app/assets/javascripts/application.js:16
+app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb__4326073293443662439_70167434396700'
+  Rendering /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (10.3ms)
+  Rendering /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.2ms)
+  Rendering /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (98.7ms)
+Started GET "/sign_in" for ::1 at 2016-11-12 11:18:25 +0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (2.3ms)
+  Rendered sessions/new.html.erb within layouts/application (5.2ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'tether' with type 'application/javascript'
+Checked in these paths: 
+  /Volumes/Whale/research/ror/final_project/teamgit/eGuru/src/app/assets/config
+  /Volumes/Whale/research/ror/final_project/teamgit/eGuru/src/app/assets/images
+  /Volumes/Whale/research/ror/final_project/teamgit/eGuru/src/app/assets/javascripts
+  /Volumes/Whale/research/ror/final_project/teamgit/eGuru/src/app/assets/stylesheets
+  /Volumes/Whale/research/ror/final_project/teamgit/eGuru/src/vendor/assets/javascripts
+  /Volumes/Whale/research/ror/final_project/teamgit/eGuru/src/vendor/assets/stylesheets
+  /Users/Hung/.rvm/gems/ruby-2.3.1/gems/jquery-rails-4.2.1/vendor/assets/javascripts
+  /Users/Hung/.rvm/gems/ruby-2.3.1/gems/coffee-rails-4.2.1/lib/assets/javascripts
+  /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actioncable-5.0.0.1/lib/assets/compiled
+  /Users/Hung/.rvm/gems/ruby-2.3.1/gems/turbolinks-source-5.0.0/lib/assets/javascripts
+  /Users/Hung/.rvm/gems/ruby-2.3.1/gems/bootstrap-4.0.0.alpha5/assets/stylesheets
+  /Users/Hung/.rvm/gems/ruby-2.3.1/gems/bootstrap-4.0.0.alpha5/assets/javascripts):
+    2: <html>
+    3: <head>
+    4: <title>EGuru</title>
+    5:   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    6:   <%= csrf_meta_tag %>
+    7:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8: </head>
+  
+app/assets/javascripts/application.js:16
+app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb__4326073293443662439_70167437660220'
+  Rendering /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (8.5ms)
+  Rendering /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendering /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (78.5ms)
+Started GET "/sign_in" for ::1 at 2016-11-12 11:19:08 +0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (3.5ms)
+  Rendered sessions/new.html.erb within layouts/application (6.5ms)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'tether' with type 'application/javascript'
+Checked in these paths: 
+  /Volumes/Whale/research/ror/final_project/teamgit/eGuru/src/app/assets/config
+  /Volumes/Whale/research/ror/final_project/teamgit/eGuru/src/app/assets/images
+  /Volumes/Whale/research/ror/final_project/teamgit/eGuru/src/app/assets/javascripts
+  /Volumes/Whale/research/ror/final_project/teamgit/eGuru/src/app/assets/stylesheets
+  /Volumes/Whale/research/ror/final_project/teamgit/eGuru/src/vendor/assets/javascripts
+  /Volumes/Whale/research/ror/final_project/teamgit/eGuru/src/vendor/assets/stylesheets
+  /Users/Hung/.rvm/gems/ruby-2.3.1/gems/jquery-rails-4.2.1/vendor/assets/javascripts
+  /Users/Hung/.rvm/gems/ruby-2.3.1/gems/coffee-rails-4.2.1/lib/assets/javascripts
+  /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actioncable-5.0.0.1/lib/assets/compiled
+  /Users/Hung/.rvm/gems/ruby-2.3.1/gems/turbolinks-source-5.0.0/lib/assets/javascripts
+  /Users/Hung/.rvm/gems/ruby-2.3.1/gems/bootstrap-4.0.0.alpha5/assets/stylesheets
+  /Users/Hung/.rvm/gems/ruby-2.3.1/gems/bootstrap-4.0.0.alpha5/assets/javascripts):
+    2: <html>
+    3: <head>
+    4: <title>EGuru</title>
+    5:   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    6:   <%= csrf_meta_tag %>
+    7:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8: </head>
+  
+app/assets/javascripts/application.js:14
+app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb__4326073293443662439_70167443428300'
+  Rendering /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.8ms)
+  Rendering /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendering /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (86.3ms)
+Started GET "/sign_in" for ::1 at 2016-11-12 11:19:57 +0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (2.2ms)
+  Rendered sessions/new.html.erb within layouts/application (5.2ms)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'tether' with type 'application/javascript'
+Checked in these paths: 
+  /Volumes/Whale/research/ror/final_project/teamgit/eGuru/src/app/assets/config
+  /Volumes/Whale/research/ror/final_project/teamgit/eGuru/src/app/assets/images
+  /Volumes/Whale/research/ror/final_project/teamgit/eGuru/src/app/assets/javascripts
+  /Volumes/Whale/research/ror/final_project/teamgit/eGuru/src/app/assets/stylesheets
+  /Volumes/Whale/research/ror/final_project/teamgit/eGuru/src/vendor/assets/javascripts
+  /Volumes/Whale/research/ror/final_project/teamgit/eGuru/src/vendor/assets/stylesheets
+  /Users/Hung/.rvm/gems/ruby-2.3.1/gems/jquery-rails-4.2.1/vendor/assets/javascripts
+  /Users/Hung/.rvm/gems/ruby-2.3.1/gems/coffee-rails-4.2.1/lib/assets/javascripts
+  /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actioncable-5.0.0.1/lib/assets/compiled
+  /Users/Hung/.rvm/gems/ruby-2.3.1/gems/turbolinks-source-5.0.0/lib/assets/javascripts
+  /Users/Hung/.rvm/gems/ruby-2.3.1/gems/bootstrap-4.0.0.alpha5/assets/stylesheets
+  /Users/Hung/.rvm/gems/ruby-2.3.1/gems/bootstrap-4.0.0.alpha5/assets/javascripts):
+    2: <html>
+    3: <head>
+    4: <title>EGuru</title>
+    5:   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    6:   <%= csrf_meta_tag %>
+    7:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8: </head>
+  
+app/assets/javascripts/application.js:16
+app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb__4326073293443662439_70167371972540'
+  Rendering /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.3ms)
+  Rendering /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendering /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (78.5ms)
+Started GET "/sign_in" for ::1 at 2016-11-12 11:20:00 +0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (2.0ms)
+  Rendered sessions/new.html.erb within layouts/application (4.2ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'tether' with type 'application/javascript'
+Checked in these paths: 
+  /Volumes/Whale/research/ror/final_project/teamgit/eGuru/src/app/assets/config
+  /Volumes/Whale/research/ror/final_project/teamgit/eGuru/src/app/assets/images
+  /Volumes/Whale/research/ror/final_project/teamgit/eGuru/src/app/assets/javascripts
+  /Volumes/Whale/research/ror/final_project/teamgit/eGuru/src/app/assets/stylesheets
+  /Volumes/Whale/research/ror/final_project/teamgit/eGuru/src/vendor/assets/javascripts
+  /Volumes/Whale/research/ror/final_project/teamgit/eGuru/src/vendor/assets/stylesheets
+  /Users/Hung/.rvm/gems/ruby-2.3.1/gems/jquery-rails-4.2.1/vendor/assets/javascripts
+  /Users/Hung/.rvm/gems/ruby-2.3.1/gems/coffee-rails-4.2.1/lib/assets/javascripts
+  /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actioncable-5.0.0.1/lib/assets/compiled
+  /Users/Hung/.rvm/gems/ruby-2.3.1/gems/turbolinks-source-5.0.0/lib/assets/javascripts
+  /Users/Hung/.rvm/gems/ruby-2.3.1/gems/bootstrap-4.0.0.alpha5/assets/stylesheets
+  /Users/Hung/.rvm/gems/ruby-2.3.1/gems/bootstrap-4.0.0.alpha5/assets/javascripts):
+    2: <html>
+    3: <head>
+    4: <title>EGuru</title>
+    5:   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    6:   <%= csrf_meta_tag %>
+    7:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8: </head>
+  
+app/assets/javascripts/application.js:16
+app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb__4326073293443662439_70167443341320'
+  Rendering /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.2ms)
+  Rendering /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendering /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (84.6ms)
+Started GET "/sign_in" for ::1 at 2016-11-12 11:21:55 +0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (2.2ms)
+  Rendered sessions/new.html.erb within layouts/application (4.6ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'tether' with type 'application/javascript'
+Checked in these paths: 
+  /Volumes/Whale/research/ror/final_project/teamgit/eGuru/src/app/assets/config
+  /Volumes/Whale/research/ror/final_project/teamgit/eGuru/src/app/assets/images
+  /Volumes/Whale/research/ror/final_project/teamgit/eGuru/src/app/assets/javascripts
+  /Volumes/Whale/research/ror/final_project/teamgit/eGuru/src/app/assets/stylesheets
+  /Volumes/Whale/research/ror/final_project/teamgit/eGuru/src/vendor/assets/javascripts
+  /Volumes/Whale/research/ror/final_project/teamgit/eGuru/src/vendor/assets/stylesheets
+  /Users/Hung/.rvm/gems/ruby-2.3.1/gems/jquery-rails-4.2.1/vendor/assets/javascripts
+  /Users/Hung/.rvm/gems/ruby-2.3.1/gems/coffee-rails-4.2.1/lib/assets/javascripts
+  /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actioncable-5.0.0.1/lib/assets/compiled
+  /Users/Hung/.rvm/gems/ruby-2.3.1/gems/turbolinks-source-5.0.0/lib/assets/javascripts
+  /Users/Hung/.rvm/gems/ruby-2.3.1/gems/bootstrap-4.0.0.alpha5/assets/stylesheets
+  /Users/Hung/.rvm/gems/ruby-2.3.1/gems/bootstrap-4.0.0.alpha5/assets/javascripts):
+    2: <html>
+    3: <head>
+    4: <title>EGuru</title>
+    5:   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    6:   <%= csrf_meta_tag %>
+    7:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8: </head>
+  
+app/assets/javascripts/application.js:16
+app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb__4326073293443662439_70167372721580'
+  Rendering /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.9ms)
+  Rendering /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendering /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (76.7ms)
+Started GET "/sign_in" for ::1 at 2016-11-12 11:21:59 +0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (2.2ms)
+  Rendered sessions/new.html.erb within layouts/application (4.6ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'tether' with type 'application/javascript'
+Checked in these paths: 
+  /Volumes/Whale/research/ror/final_project/teamgit/eGuru/src/app/assets/config
+  /Volumes/Whale/research/ror/final_project/teamgit/eGuru/src/app/assets/images
+  /Volumes/Whale/research/ror/final_project/teamgit/eGuru/src/app/assets/javascripts
+  /Volumes/Whale/research/ror/final_project/teamgit/eGuru/src/app/assets/stylesheets
+  /Volumes/Whale/research/ror/final_project/teamgit/eGuru/src/vendor/assets/javascripts
+  /Volumes/Whale/research/ror/final_project/teamgit/eGuru/src/vendor/assets/stylesheets
+  /Users/Hung/.rvm/gems/ruby-2.3.1/gems/jquery-rails-4.2.1/vendor/assets/javascripts
+  /Users/Hung/.rvm/gems/ruby-2.3.1/gems/coffee-rails-4.2.1/lib/assets/javascripts
+  /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actioncable-5.0.0.1/lib/assets/compiled
+  /Users/Hung/.rvm/gems/ruby-2.3.1/gems/turbolinks-source-5.0.0/lib/assets/javascripts
+  /Users/Hung/.rvm/gems/ruby-2.3.1/gems/bootstrap-4.0.0.alpha5/assets/stylesheets
+  /Users/Hung/.rvm/gems/ruby-2.3.1/gems/bootstrap-4.0.0.alpha5/assets/javascripts):
+    2: <html>
+    3: <head>
+    4: <title>EGuru</title>
+    5:   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    6:   <%= csrf_meta_tag %>
+    7:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8: </head>
+  
+app/assets/javascripts/application.js:16
+app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb__4326073293443662439_70167404878060'
+  Rendering /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (11.5ms)
+  Rendering /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendering /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (86.6ms)
+Started GET "/sign_in" for ::1 at 2016-11-12 11:22:01 +0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (2.5ms)
+  Rendered sessions/new.html.erb within layouts/application (7.1ms)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'tether' with type 'application/javascript'
+Checked in these paths: 
+  /Volumes/Whale/research/ror/final_project/teamgit/eGuru/src/app/assets/config
+  /Volumes/Whale/research/ror/final_project/teamgit/eGuru/src/app/assets/images
+  /Volumes/Whale/research/ror/final_project/teamgit/eGuru/src/app/assets/javascripts
+  /Volumes/Whale/research/ror/final_project/teamgit/eGuru/src/app/assets/stylesheets
+  /Volumes/Whale/research/ror/final_project/teamgit/eGuru/src/vendor/assets/javascripts
+  /Volumes/Whale/research/ror/final_project/teamgit/eGuru/src/vendor/assets/stylesheets
+  /Users/Hung/.rvm/gems/ruby-2.3.1/gems/jquery-rails-4.2.1/vendor/assets/javascripts
+  /Users/Hung/.rvm/gems/ruby-2.3.1/gems/coffee-rails-4.2.1/lib/assets/javascripts
+  /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actioncable-5.0.0.1/lib/assets/compiled
+  /Users/Hung/.rvm/gems/ruby-2.3.1/gems/turbolinks-source-5.0.0/lib/assets/javascripts
+  /Users/Hung/.rvm/gems/ruby-2.3.1/gems/bootstrap-4.0.0.alpha5/assets/stylesheets
+  /Users/Hung/.rvm/gems/ruby-2.3.1/gems/bootstrap-4.0.0.alpha5/assets/javascripts):
+    2: <html>
+    3: <head>
+    4: <title>EGuru</title>
+    5:   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    6:   <%= csrf_meta_tag %>
+    7:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8: </head>
+  
+app/assets/javascripts/application.js:16
+app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb__4326073293443662439_70167445460920'
+  Rendering /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.2ms)
+  Rendering /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendering /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (87.3ms)
+Started GET "/" for ::1 at 2016-11-12 11:22:04 +0700
+Processing by TempController#index as HTML
+Redirected to http://localhost:3000/sign_in
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for ::1 at 2016-11-12 11:22:04 +0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (2.2ms)
+  Rendered sessions/new.html.erb within layouts/application (4.8ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'tether' with type 'application/javascript'
+Checked in these paths: 
+  /Volumes/Whale/research/ror/final_project/teamgit/eGuru/src/app/assets/config
+  /Volumes/Whale/research/ror/final_project/teamgit/eGuru/src/app/assets/images
+  /Volumes/Whale/research/ror/final_project/teamgit/eGuru/src/app/assets/javascripts
+  /Volumes/Whale/research/ror/final_project/teamgit/eGuru/src/app/assets/stylesheets
+  /Volumes/Whale/research/ror/final_project/teamgit/eGuru/src/vendor/assets/javascripts
+  /Volumes/Whale/research/ror/final_project/teamgit/eGuru/src/vendor/assets/stylesheets
+  /Users/Hung/.rvm/gems/ruby-2.3.1/gems/jquery-rails-4.2.1/vendor/assets/javascripts
+  /Users/Hung/.rvm/gems/ruby-2.3.1/gems/coffee-rails-4.2.1/lib/assets/javascripts
+  /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actioncable-5.0.0.1/lib/assets/compiled
+  /Users/Hung/.rvm/gems/ruby-2.3.1/gems/turbolinks-source-5.0.0/lib/assets/javascripts
+  /Users/Hung/.rvm/gems/ruby-2.3.1/gems/bootstrap-4.0.0.alpha5/assets/stylesheets
+  /Users/Hung/.rvm/gems/ruby-2.3.1/gems/bootstrap-4.0.0.alpha5/assets/javascripts):
+    2: <html>
+    3: <head>
+    4: <title>EGuru</title>
+    5:   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    6:   <%= csrf_meta_tag %>
+    7:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8: </head>
+  
+app/assets/javascripts/application.js:16
+app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb__4326073293443662439_70167373096160'
+  Rendering /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.9ms)
+  Rendering /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.2ms)
+  Rendering /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/Hung/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (80.7ms)
+Started GET "/sign_in" for ::1 at 2016-11-12 11:23:22 +0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (23.1ms)
+  Rendered sessions/new.html.erb within layouts/application (39.4ms)
+Completed 200 OK in 4622ms (Views: 4603.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for ::1 at 2016-11-12 11:23:31 +0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (2.5ms)
+  Rendered sessions/new.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 93ms (Views: 92.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for ::1 at 2016-11-12 11:23:32 +0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (4.0ms)
+  Rendered sessions/new.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 129ms (Views: 128.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for ::1 at 2016-11-12 11:23:34 +0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (5.4ms)
+  Rendered sessions/new.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 142ms (Views: 141.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for ::1 at 2016-11-12 11:23:48 +0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (3.0ms)
+  Rendered sessions/new.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 199ms (Views: 198.7ms | ActiveRecord: 0.0ms)
+
+
