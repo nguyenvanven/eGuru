@@ -1,7 +1,7 @@
 <div class="user-sign-form">
 	<div id="clearance" class="sign-up">
 	  <div class="row">
-		  <div class="col-md-6 offset-md-3">
+		  <div class="col-md-6 offset-md-3 text-xs-center">
 		  	<h2><%= t(".title") %></h2>	
 		  </div>
 	  </div>
@@ -9,12 +9,6 @@
 		<div class="container" >
 		  <%= form_for @user do |form| %>
 		    <%= render partial: '/users/form', object: form %>
-
-		    <div class="form-group row">
-		      <label class="col-sm-1" ></label>
-		      <%= form.submit "Signup", class:"btn btn-primary col-sm-1" %>
-		      <%= link_to t(".sign_in"), sign_in_path, class:"col-sm-1" %>
-		    </div>
 		  <% end %>
 		</div>
 	</div>
