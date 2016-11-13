@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161113090332) do
+ActiveRecord::Schema.define(version: 20161113101843) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,9 @@ ActiveRecord::Schema.define(version: 20161113090332) do
     t.string   "remember_token",     limit: 128, null: false
     t.string   "oauth_token"
     t.datetime "oauth_expires_at"
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "name"
     t.index ["email"], name: "index_users_on_email", using: :btree
     t.index ["remember_token"], name: "index_users_on_remember_token", using: :btree
   end
