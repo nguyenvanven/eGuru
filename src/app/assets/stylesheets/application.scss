@@ -14,6 +14,11 @@
  *= require_self
  */
  @import 'bootstrap';
+ @import 'bootstrap-social';
+ @import "font-awesome-sprockets";
+ @import "font-awesome";
+
+
 
 $content-height: 93vh;
 
@@ -69,11 +74,3 @@ footer{
 #navbar-header{
 	padding-top: 10px;	
 }
-
-
-
-
-
-
-
-
