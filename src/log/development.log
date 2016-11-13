@@ -3356,3 +3356,606 @@ Processing by Clearance::SessionsController#new as HTML
 Completed 200 OK in 96ms (Views: 95.5ms | ActiveRecord: 0.0ms)
 
 
+  [1m[35m (5.7ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8497073481025503990);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (23.9ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddFbTokenToUser (20161113090332)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (34.1ms)[0m  [1m[35mALTER TABLE "users" ADD "oauth_token" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(8497073481025503990)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8497073481025503990);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddFbTokenToUser (20161113090332)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "users" ADD "oauth_token" character varying[0m
+  [1m[35m (8.3ms)[0m  [1m[35mALTER TABLE "users" ADD "oauth_expires_at" timestamp[0m
+  [1m[35mSQL (25.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161113090332"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (3.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(8497073481025503990)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (4.3ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8497073481025503990);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(8497073481025503990)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+Started GET "/" for ::1 at 2016-11-13 16:25:41 +0700
+Started GET "/" for ::1 at 2016-11-13 16:25:41 +0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by TempController#index as HTML
+Processing by TempController#index as HTML
+Redirected to http://localhost:3000/sign_in
+Redirected to http://localhost:3000/sign_in
+Filter chain halted as :require_login rendered or redirected
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 24ms (ActiveRecord: 0.0ms)
+
+
+Completed 302 Found in 35ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for ::1 at 2016-11-13 16:25:41 +0700
+Started GET "/sign_in" for ::1 at 2016-11-13 16:25:41 +0700
+Processing by Clearance::SessionsController#new as HTML
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (19.5ms)
+  Rendered sessions/_form.html.erb (17.2ms)
+  Rendered sessions/new.html.erb within layouts/application (23.2ms)
+  Rendered sessions/new.html.erb within layouts/application (28.3ms)
+Completed 200 OK in 5789ms (Views: 5788.0ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 5804ms (Views: 5802.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook" for ::1 at 2016-11-13 16:25:50 +0700
+(facebook) Request phase initiated.
+Started GET "/auth/facebook" for ::1 at 2016-11-13 16:25:50 +0700
+(facebook) Request phase initiated.
+Started GET "/auth/facebook/callback?code=AQDDRKP9gI1dCfbW-TDiVdGy2rhyNk6tJJzsFpdpqtDeN8JEFONaEIu3qyVgdmqE5e3IMc-aGLs4ToOT2h_Ak4OglexLEkQtgBNGu5Cf_gY2jwx7hU8RCuiJzZ6M0JeFcnDYIr8ttIoq4EfV5xF8xgo7gCVbQSI8CviYaN7dDb8_4IB29rzB20DPtyMAKstkPw2VNoO3pWoorq1NGgxb_b_gLN4X29uihIZLs4YfQKBC-0P10IV4iBlof8yLAUvs6hutj9P16bHaMmPPyIZJg2ebllgRDOY619X37vEVOYQwkw7kaMgRiclU5WwTI374pKDXsft5LpcVvpQBvqb3lVoZ" for ::1 at 2016-11-13 16:25:51 +0700
+(facebook) Callback phase initiated.
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"AQDDRKP9gI1dCfbW-TDiVdGy2rhyNk6tJJzsFpdpqtDeN8JEFONaEIu3qyVgdmqE5e3IMc-aGLs4ToOT2h_Ak4OglexLEkQtgBNGu5Cf_gY2jwx7hU8RCuiJzZ6M0JeFcnDYIr8ttIoq4EfV5xF8xgo7gCVbQSI8CviYaN7dDb8_4IB29rzB20DPtyMAKstkPw2VNoO3pWoorq1NGgxb_b_gLN4X29uihIZLs4YfQKBC-0P10IV4iBlof8yLAUvs6hutj9P16bHaMmPPyIZJg2ebllgRDOY619X37vEVOYQwkw7kaMgRiclU5WwTI374pKDXsft5LpcVvpQBvqb3lVoZ", "provider"=>"facebook"}
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  
+app/models/user.rb:5:in `from_omniauth'
+app/controllers/sessions_controller.rb:3:in `create'
+  Rendering /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.5ms)
+  Rendering /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendering /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (92.0ms)
+Started GET "/sign_in" for ::1 at 2016-11-13 16:26:59 +0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (2.8ms)
+  Rendered sessions/new.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 52ms (Views: 51.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for ::1 at 2016-11-13 16:27:00 +0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (2.1ms)
+  Rendered sessions/new.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 54ms (Views: 53.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook" for ::1 at 2016-11-13 16:27:02 +0700
+(facebook) Request phase initiated.
+Started GET "/auth/facebook" for ::1 at 2016-11-13 16:27:02 +0700
+(facebook) Request phase initiated.
+Started GET "/auth/facebook/callback?code=AQBYWGGNGA-BZjimvwr54Q9IxaJ94XuRHOr7lcjIV0UCP8qYi_LaQlxMvim-BCHT07M9F9R8lTLyOYJGjzu5FDS93nmaadiYi529UNF8CZEkDd6AMUgmFo-rehp_7v2DEx36LSfvCJbMjiC1WTBkdhxmZCKv9837HkgVHkfmviveNZkecu94NltQS2szMM8hbIJ8Z4NA_CV3aJnnZFyT2P_GDLgADJVGO52RTJgEYXZfKzEdED33uwAyEqRBvdCeQfIevz3svHb-hdGul_gmOj5Z7wcIujBpqQW4zoDY6xwTG1uSbECTdLMsLlAtD802ww8M28ZsogYo0-5AkAvStp1w" for ::1 at 2016-11-13 16:27:03 +0700
+(facebook) Callback phase initiated.
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"AQBYWGGNGA-BZjimvwr54Q9IxaJ94XuRHOr7lcjIV0UCP8qYi_LaQlxMvim-BCHT07M9F9R8lTLyOYJGjzu5FDS93nmaadiYi529UNF8CZEkDd6AMUgmFo-rehp_7v2DEx36LSfvCJbMjiC1WTBkdhxmZCKv9837HkgVHkfmviveNZkecu94NltQS2szMM8hbIJ8Z4NA_CV3aJnnZFyT2P_GDLgADJVGO52RTJgEYXZfKzEdED33uwAyEqRBvdCeQfIevz3svHb-hdGul_gmOj5Z7wcIujBpqQW4zoDY6xwTG1uSbECTdLMsLlAtD802ww8M28ZsogYo0-5AkAvStp1w", "provider"=>"facebook"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  
+app/models/user.rb:5:in `from_omniauth'
+app/controllers/sessions_controller.rb:3:in `create'
+  Rendering /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.3ms)
+  Rendering /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (84.1ms)
+Started GET "/" for ::1 at 2016-11-13 16:27:22 +0700
+Processing by TempController#index as HTML
+Redirected to http://localhost:3000/sign_in
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for ::1 at 2016-11-13 16:27:22 +0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (1.7ms)
+  Rendered sessions/new.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 50ms (Views: 48.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook" for ::1 at 2016-11-13 16:27:25 +0700
+(facebook) Request phase initiated.
+Started GET "/auth/facebook" for ::1 at 2016-11-13 16:27:25 +0700
+(facebook) Request phase initiated.
+Started GET "/auth/facebook/callback?code=AQCvtePL7GvKQV3PjFiUBwMT6fcIXNun2ELy2JanZrv_1nFzP7PCqjUuiH6AxJuyx8_PU64J8woiilkvjUhK7cU8Sd3WZcHKDIqrosejm-ApyjjgHbNrdUly2bFohaaxMhjB8kuXrChUQN923zfPHjrhfpKs3mtDCyR2PTHQ4-iZzHXvM7jzN5CxncyvUJL2eE5FCNf95gklk8MQQhgr4OW6nzxPW9nRNrfn7FKer0izjT-2MKBfa16Iq16eeaVw3HiTDMpHOACVP1hlRdOKYxO236-67awGNeT8Kywitn0Ut03nh7JbS8YZ1T3w4GZnfIITunGPCr4d13RpIdSIIDdN" for ::1 at 2016-11-13 16:27:26 +0700
+(facebook) Callback phase initiated.
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"AQCvtePL7GvKQV3PjFiUBwMT6fcIXNun2ELy2JanZrv_1nFzP7PCqjUuiH6AxJuyx8_PU64J8woiilkvjUhK7cU8Sd3WZcHKDIqrosejm-ApyjjgHbNrdUly2bFohaaxMhjB8kuXrChUQN923zfPHjrhfpKs3mtDCyR2PTHQ4-iZzHXvM7jzN5CxncyvUJL2eE5FCNf95gklk8MQQhgr4OW6nzxPW9nRNrfn7FKer0izjT-2MKBfa16Iq16eeaVw3HiTDMpHOACVP1hlRdOKYxO236-67awGNeT8Kywitn0Ut03nh7JbS8YZ1T3w4GZnfIITunGPCr4d13RpIdSIIDdN", "provider"=>"facebook"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  
+app/models/user.rb:5:in `from_omniauth'
+app/controllers/sessions_controller.rb:3:in `create'
+  Rendering /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.6ms)
+  Rendering /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.5ms)
+  Rendering /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (99.3ms)
+Started GET "/sign_in" for ::1 at 2016-11-13 16:28:50 +0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (3.2ms)
+  Rendered sessions/new.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 72ms (Views: 70.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook" for ::1 at 2016-11-13 16:28:53 +0700
+(facebook) Request phase initiated.
+Started GET "/auth/facebook" for ::1 at 2016-11-13 16:28:53 +0700
+(facebook) Request phase initiated.
+Started GET "/auth/facebook/callback?code=AQDzc6c-xzXSSUxJg7cxkfYQwbBgJOcdxpVVNYZgiGWfyv6f4MnAzm3zDfxxOgexS-5MQUHr3H-PrXmBXDa739fbEJlrv1RZmRu94OPblsAF8PEiJrmPRw0if9Ez4vqspwHDbsd9gSYB06XVZynF0vjKfEoTtdbyY4D6UvTi5DEk_ximOumjw4YUORuJT4-QHn_h1tVHXjRNmjzzowX_2Bi8LQGvu5NtBktHysal0GBqUaqGn0NoLQvLLYtWrE5zdxxhb_MAPaODbjodZmQEnOIsX3G4lwr584v8vxk7MB_KSvMpzbiHu2otZ_bVK9z-WFnXwnF6RfDjJX5WjpyZuQcR" for ::1 at 2016-11-13 16:28:54 +0700
+(facebook) Callback phase initiated.
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"AQDzc6c-xzXSSUxJg7cxkfYQwbBgJOcdxpVVNYZgiGWfyv6f4MnAzm3zDfxxOgexS-5MQUHr3H-PrXmBXDa739fbEJlrv1RZmRu94OPblsAF8PEiJrmPRw0if9Ez4vqspwHDbsd9gSYB06XVZynF0vjKfEoTtdbyY4D6UvTi5DEk_ximOumjw4YUORuJT4-QHn_h1tVHXjRNmjzzowX_2Bi8LQGvu5NtBktHysal0GBqUaqGn0NoLQvLLYtWrE5zdxxhb_MAPaODbjodZmQEnOIsX3G4lwr584v8vxk7MB_KSvMpzbiHu2otZ_bVK9z-WFnXwnF6RfDjJX5WjpyZuQcR", "provider"=>"facebook"}
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  
+app/models/user.rb:5:in `from_omniauth'
+app/controllers/sessions_controller.rb:4:in `create'
+  Rendering /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.1ms)
+  Rendering /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendering /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (88.4ms)
+Started GET "/" for ::1 at 2016-11-13 16:29:24 +0700
+Processing by TempController#index as HTML
+Redirected to http://localhost:3000/sign_in
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for ::1 at 2016-11-13 16:29:25 +0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (2.8ms)
+  Rendered sessions/new.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 103ms (Views: 102.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for ::1 at 2016-11-13 16:29:27 +0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (1.9ms)
+  Rendered sessions/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 62ms (Views: 61.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook" for ::1 at 2016-11-13 16:29:31 +0700
+(facebook) Request phase initiated.
+Started GET "/auth/facebook" for ::1 at 2016-11-13 16:29:31 +0700
+(facebook) Request phase initiated.
+Started GET "/auth/facebook/callback?code=AQCDk738HI8DOSmoG9sNXUwkPI7NydUud5q7yaAjpGfpHqkeAiZQmdQ6-0O0TOhbNUM2v8gsIUfOQQ4_OmZVrN-40Bb2D423IKoMnV7M17m-qn0pfCw2OgT1sOuOn4oQbDIX8YvyVIaDns-K29P89gq_5wA55Z42KPWneKAsuODohOX00r1UmuXW25FVOUApesPlNcicCYnsYqjBVtp_egJBtc6sImjkeept0M6s9VbdopCz0wSy5IojQ-txTLhoItbG8H3JDjDbF_Ykm4gliHbmD3XTFl2MMfxRLQnifTSaaG5J15QtE8k6xgDN6P9LNZuKd3oG-I6lNT-F08ZR--FL" for ::1 at 2016-11-13 16:29:32 +0700
+(facebook) Callback phase initiated.
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"AQCDk738HI8DOSmoG9sNXUwkPI7NydUud5q7yaAjpGfpHqkeAiZQmdQ6-0O0TOhbNUM2v8gsIUfOQQ4_OmZVrN-40Bb2D423IKoMnV7M17m-qn0pfCw2OgT1sOuOn4oQbDIX8YvyVIaDns-K29P89gq_5wA55Z42KPWneKAsuODohOX00r1UmuXW25FVOUApesPlNcicCYnsYqjBVtp_egJBtc6sImjkeept0M6s9VbdopCz0wSy5IojQ-txTLhoItbG8H3JDjDbF_Ykm4gliHbmD3XTFl2MMfxRLQnifTSaaG5J15QtE8k6xgDN6P9LNZuKd3oG-I6lNT-F08ZR--FL", "provider"=>"facebook"}
+Completed 500 Internal Server Error in 89ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `echo' for #<SessionsController:0x007fee46f07850>):
+  
+app/controllers/sessions_controller.rb:4:in `create'
+  Rendering /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.8ms)
+  Rendering /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendering /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (160.8ms)
+Started GET "/" for ::1 at 2016-11-13 16:29:49 +0700
+Processing by TempController#index as HTML
+Redirected to http://localhost:3000/sign_in
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for ::1 at 2016-11-13 16:29:49 +0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (3.5ms)
+  Rendered sessions/new.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 89ms (Views: 88.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook" for ::1 at 2016-11-13 16:29:51 +0700
+(facebook) Request phase initiated.
+Started GET "/auth/facebook" for ::1 at 2016-11-13 16:29:52 +0700
+(facebook) Request phase initiated.
+Started GET "/auth/facebook/callback?code=AQC_vdCx7WN0eqlqZJ7KYIykIVXRYu_BnLBn6xplZR-Z0G2aXMwW29QGM0PNzcV8VlCYk4eyDK-1IzcFOf0fQyBakfSMK6-KvvrrUN_kK8K2XB5TMTbawP8Kl3kaeEnxF_i0jvc4Hjf03Uq1E4GG7Jt27sPlHvqYVbVAREXkRudAgb8xQ6tA7-Si7bsAH2xBt-jYRFRz8sncRQo70Xmf4LE24--MB0pN8fb9GTZCiB2sLtLhOiWNCU1XEtYt9d5jJOUNLjWmCnOulqEBo2nFT0synBYI1jWIy9a6l1P_HdwIn1S7rz7iG_zd5RTo7EoUgn7EBvLobeKwX1-ur9l3FXp-" for ::1 at 2016-11-13 16:29:52 +0700
+(facebook) Callback phase initiated.
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"AQC_vdCx7WN0eqlqZJ7KYIykIVXRYu_BnLBn6xplZR-Z0G2aXMwW29QGM0PNzcV8VlCYk4eyDK-1IzcFOf0fQyBakfSMK6-KvvrrUN_kK8K2XB5TMTbawP8Kl3kaeEnxF_i0jvc4Hjf03Uq1E4GG7Jt27sPlHvqYVbVAREXkRudAgb8xQ6tA7-Si7bsAH2xBt-jYRFRz8sncRQo70Xmf4LE24--MB0pN8fb9GTZCiB2sLtLhOiWNCU1XEtYt9d5jJOUNLjWmCnOulqEBo2nFT0synBYI1jWIy9a6l1P_HdwIn1S7rz7iG_zd5RTo7EoUgn7EBvLobeKwX1-ur9l3FXp-", "provider"=>"facebook"}
+Completed 500 Internal Server Error in 61ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `echo' for #<SessionsController:0x007fee4424a6f0>):
+  
+app/controllers/sessions_controller.rb:4:in `create'
+  Rendering /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.7ms)
+  Rendering /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendering /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (151.8ms)
+Started GET "/sign_in" for ::1 at 2016-11-13 16:30:11 +0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (3.6ms)
+  Rendered sessions/new.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 88ms (Views: 87.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook" for ::1 at 2016-11-13 16:30:14 +0700
+(facebook) Request phase initiated.
+Started GET "/auth/facebook" for ::1 at 2016-11-13 16:30:14 +0700
+(facebook) Request phase initiated.
+Started GET "/auth/facebook/callback?code=AQBCc9I7_TviCLp8Z1ZawD96Ko6ceufiuAvUGJgVmG7PcmT1goUagQjcahbBp_bR4eJmuqBL8ibF3-ZUOLeqVCK1Yer8vvYvkXrMjyaEbmc7tKDWm_nKdaRbu-KTfGpZkpsoIhJJi_RNAvfaiFyTZmtn37UMP7u1nuHv0OZn6ezVUzvrfvm1ABPJy5N79xDfo986IycyPyQLIW-BlKqkTAOd8i0lkM4rphLV1J2zjgwNbWjyldEJ7yJloXsBZoMUAF1tEltbga90R6KhzgKhn0SU30AqXpbWUOyPgOIWPUG5qwL2fz98rKI0RAZy6Y9hC-48LgB0zv1fcRLDJ340y1bU" for ::1 at 2016-11-13 16:30:15 +0700
+(facebook) Callback phase initiated.
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"AQBCc9I7_TviCLp8Z1ZawD96Ko6ceufiuAvUGJgVmG7PcmT1goUagQjcahbBp_bR4eJmuqBL8ibF3-ZUOLeqVCK1Yer8vvYvkXrMjyaEbmc7tKDWm_nKdaRbu-KTfGpZkpsoIhJJi_RNAvfaiFyTZmtn37UMP7u1nuHv0OZn6ezVUzvrfvm1ABPJy5N79xDfo986IycyPyQLIW-BlKqkTAOd8i0lkM4rphLV1J2zjgwNbWjyldEJ7yJloXsBZoMUAF1tEltbga90R6KhzgKhn0SU30AqXpbWUOyPgOIWPUG5qwL2fz98rKI0RAZy6Y9hC-48LgB0zv1fcRLDJ340y1bU", "provider"=>"facebook"}
+Completed 500 Internal Server Error in 308ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `echo' for #<SessionsController:0x007fee46688850>):
+  
+app/controllers/sessions_controller.rb:4:in `create'
+  Rendering /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.1ms)
+  Rendering /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendering /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (138.7ms)
+Started GET "/sign_in" for ::1 at 2016-11-13 16:31:35 +0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (2.4ms)
+  Rendered sessions/new.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 58ms (Views: 57.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for ::1 at 2016-11-13 16:31:37 +0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (1.4ms)
+  Rendered sessions/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 43ms (Views: 42.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for ::1 at 2016-11-13 16:31:37 +0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (1.8ms)
+  Rendered sessions/new.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 70ms (Views: 69.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for ::1 at 2016-11-13 16:31:38 +0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (2.7ms)
+  Rendered sessions/new.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 63ms (Views: 62.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for ::1 at 2016-11-13 16:35:50 +0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (17.8ms)
+  Rendered sessions/new.html.erb within layouts/application (31.8ms)
+Completed 200 OK in 4675ms (Views: 4655.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for ::1 at 2016-11-13 16:37:51 +0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (2.2ms)
+  Rendered sessions/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 64ms (Views: 62.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for ::1 at 2016-11-13 16:37:54 +0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (2.2ms)
+  Rendered sessions/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 52ms (Views: 51.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for ::1 at 2016-11-13 16:37:55 +0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (2.7ms)
+  Rendered sessions/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 75ms (Views: 74.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for ::1 at 2016-11-13 16:37:56 +0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (2.3ms)
+  Rendered sessions/new.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 68ms (Views: 67.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for ::1 at 2016-11-13 16:37:56 +0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (3.3ms)
+  Rendered sessions/new.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 66ms (Views: 65.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for ::1 at 2016-11-13 16:37:56 +0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (3.7ms)
+  Rendered sessions/new.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 91ms (Views: 89.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for ::1 at 2016-11-13 16:37:56 +0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (2.3ms)
+  Rendered sessions/new.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 78ms (Views: 77.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for ::1 at 2016-11-13 16:37:57 +0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (2.3ms)
+  Rendered sessions/new.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 58ms (Views: 57.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for ::1 at 2016-11-13 16:37:57 +0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (3.8ms)
+  Rendered sessions/new.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 96ms (Views: 95.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for ::1 at 2016-11-13 16:40:10 +0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (2.4ms)
+  Rendered sessions/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 89ms (Views: 87.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for ::1 at 2016-11-13 16:40:12 +0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (2.8ms)
+  Rendered sessions/new.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 63ms (Views: 62.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for ::1 at 2016-11-13 16:42:19 +0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (26.5ms)
+  Rendered sessions/new.html.erb within layouts/application (42.2ms)
+Completed 500 Internal Server Error in 320ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Invalid CSS after "...otstrap-social'": expected selector or at-rule, was "$content-height..."):
+    2: <html>
+    3: <head>
+    4: <title>EGuru</title>
+    5:   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    6:   <%= csrf_meta_tag %>
+    7:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8:   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+app/assets/stylesheets/application.scss:20
+app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb__3020652307960331482_70267837479960'
+  Rendering /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (13.8ms)
+  Rendering /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendering /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (101.6ms)
+Started GET "/sign_in" for ::1 at 2016-11-13 16:42:33 +0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (3.3ms)
+  Rendered sessions/new.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 3351ms (Views: 3350.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for ::1 at 2016-11-13 16:43:13 +0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (3.4ms)
+  Rendered sessions/new.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 76ms (Views: 75.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for ::1 at 2016-11-13 16:43:15 +0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (2.8ms)
+  Rendered sessions/new.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 60ms (Views: 59.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for ::1 at 2016-11-13 16:43:43 +0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (2.2ms)
+  Rendered sessions/new.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 58ms (Views: 56.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for ::1 at 2016-11-13 16:44:31 +0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (4.0ms)
+  Rendered sessions/new.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 84ms (Views: 83.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook" for ::1 at 2016-11-13 16:44:36 +0700
+(facebook) Request phase initiated.
+Started GET "/auth/facebook" for ::1 at 2016-11-13 16:44:36 +0700
+(facebook) Request phase initiated.
+Started GET "/auth/facebook/callback?code=AQCbqgAlICnyOhQebkVbFP0h4yNfiNa5l-AGJY0CfhcWvGdvt9LdkdAmCBSEJM4eWKqUBKUPI4Dl2GVoW_Qtx6FfGzN0wrdLrRXd3QMR0TT1EtF_hoxM3sBYvBg8Nu4Hf2BCCKmXVbK8UZlhlCSSx2uCDj5ggd6LKHH-2D_mR28qQozvEd7FbtAOR5oANkh9807xoUdObij8EyVMhzf2Uzo0IWB1iw2fsnkI8uqbE7cWl9N8Q9sVjzJws1C8He6xwz2LjHvG8Fmb55G1hWsHLWy-ZTvobsOCA2UzGJ2lofKl_PpQ6qSJH6eryWxVe8Hm0i75vEkNb_w0B28bJDzQO9vn" for ::1 at 2016-11-13 16:44:37 +0700
+(facebook) Callback phase initiated.
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"AQCbqgAlICnyOhQebkVbFP0h4yNfiNa5l-AGJY0CfhcWvGdvt9LdkdAmCBSEJM4eWKqUBKUPI4Dl2GVoW_Qtx6FfGzN0wrdLrRXd3QMR0TT1EtF_hoxM3sBYvBg8Nu4Hf2BCCKmXVbK8UZlhlCSSx2uCDj5ggd6LKHH-2D_mR28qQozvEd7FbtAOR5oANkh9807xoUdObij8EyVMhzf2Uzo0IWB1iw2fsnkI8uqbE7cWl9N8Q9sVjzJws1C8He6xwz2LjHvG8Fmb55G1hWsHLWy-ZTvobsOCA2UzGJ2lofKl_PpQ6qSJH6eryWxVe8Hm0i75vEkNb_w0B28bJDzQO9vn", "provider"=>"facebook"}
+DEPRECATION WARNING: env is deprecated and will be removed from Rails 5.1 (called from create at /Volumes/Data/projects/eGuru/src/app/controllers/sessions_controller.rb:3)
+DEPRECATION WARNING: env is deprecated and will be removed from Rails 5.1 (called from create at /Volumes/Data/projects/eGuru/src/app/controllers/sessions_controller.rb:4)
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  
+app/models/user.rb:5:in `from_omniauth'
+app/controllers/sessions_controller.rb:4:in `create'
+  Rendering /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.8ms)
+  Rendering /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendering /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (104.8ms)
+Started GET "/sign_in" for ::1 at 2016-11-13 16:45:46 +0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (3.6ms)
+  Rendered sessions/new.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 318ms (Views: 316.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for ::1 at 2016-11-13 16:45:49 +0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (2.5ms)
+  Rendered sessions/new.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 59ms (Views: 57.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook/callback" for ::1 at 2016-11-13 16:45:51 +0700
+(facebook) Callback phase initiated.
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"facebook"}
+DEPRECATION WARNING: env is deprecated and will be removed from Rails 5.1 (called from create at /Volumes/Data/projects/eGuru/src/app/controllers/sessions_controller.rb:3)
+DEPRECATION WARNING: env is deprecated and will be removed from Rails 5.1 (called from create at /Volumes/Data/projects/eGuru/src/app/controllers/sessions_controller.rb:4)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  
+app/models/user.rb:5:in `from_omniauth'
+app/controllers/sessions_controller.rb:4:in `create'
+  Rendering /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.6ms)
+  Rendering /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendering /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (84.4ms)
+Started GET "/sign_in" for ::1 at 2016-11-13 16:45:55 +0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (4.4ms)
+  Rendered sessions/new.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 71ms (Views: 70.0ms | ActiveRecord: 0.0ms)
+
+

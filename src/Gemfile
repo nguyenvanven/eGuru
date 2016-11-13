@@ -57,3 +57,8 @@ gem 'bootstrap', '~> 4.0.0.alpha5'
 gem "clearance"
 
 gem "email_spec"
+
+# For FB authentication
+gem 'omniauth'
+gem 'omniauth-facebook', '1.4.0'
+gem 'bootstrap-social-rails'
