@@ -21,7 +21,10 @@
         <% end %>
       </div>
       <div class="form-group row">
-        Or
-        <%= link_to "Login Facebook", "/auth/facebook", id: "sign_in", class:"btn btn-block btn-social btn-facebook col-sm-2" %>
+        <a class="btn btn-social btn-facebook col-sm-6" href="/auth/facebook">
+          <span class="fa fa-facebook">
+          </span>
+          Sign in Facebook
+        </a>
       </div>
     <% end %>
