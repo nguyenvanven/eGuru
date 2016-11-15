@@ -1,6 +1,8 @@
 class User < ApplicationRecord
   include Clearance::User
 
+  mount_uploader :avatar, AvatarUploader
+  has_many :conversations, dependent: :destroy
   # def self.from_omniauth(auth)
   #   where(auth.slice(:privider, :uid)).first_or_initialize.tap do |user|
   #     user.provider = auth.provider
@@ -20,4 +22,5 @@ class User < ApplicationRecord
       user.save(:validate => false)
     end
   end
+
 end
