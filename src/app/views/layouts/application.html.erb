@@ -25,7 +25,7 @@
               </li>
               <li class="nav-item float-xs-right">
                 <% if signed_in? -%>
-                  <%= link_to t(".sign_out"), sign_in_path, method: :delete %>
+                  <%= link_to t(".sign_out"), sign_out_path, method: :delete %>
                 <% else -%>
                   <%= link_to t(".sign_in"), sign_in_path %>
                 <% end -%>
@@ -44,6 +44,6 @@
   <footer class="text-xs-center">
     <p>&copy; eGuru - Developed by HLVA Team</p>
   </footer>
-  
+
 </body>
 </html>

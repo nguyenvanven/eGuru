@@ -5417,3 +5417,1008 @@ Completed 200 OK in 212ms (Views: 189.6ms | ActiveRecord: 5.8ms)
 
 [ActiveJob] [MessageBroadcastJob] [6e0d9fac-a722-45fe-b0d4-718fb66cdba3] Performed MessageBroadcastJob from Async(default) in 352.81ms
 
+  [1m[35m (5.7ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8497073481025503990);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (24.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddAvatarToUsers (20161113051710)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (31.9ms)[0m  [1m[35mALTER TABLE "users" ADD "avatar" character varying[0m
+  [1m[35mSQL (2.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161113051710"]]
+  [1m[35m (12.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateConversations (20161114045231)
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (33.1ms)[0m  [1m[35mCREATE TABLE "conversations" ("id" serial primary key, "sender_id" integer, "recipient_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161114045231"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateMessages (20161114045350)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.6ms)[0m  [1m[35mCREATE TABLE "messages" ("id" serial primary key)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161114045350"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddDetailsToMessages (20161114050937)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.1ms)[0m  [1m[35mALTER TABLE "messages" ADD "body" text[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "messages" ADD "user_id" integer[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "messages" ADD "read" boolean[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "messages" ADD "created_at" timestamp[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "messages" ADD "updated_at" timestamp[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161114050937"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddConversationIdToMessages (20161115091730)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "messages" ADD "conversation_id" integer[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161115091730"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (3.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(8497073481025503990)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (4.2ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'conversations'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'messages'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+Started GET "/sign_in" for ::1 at 2016-11-15 19:00:41 +0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (28.0ms)
+  Rendered sessions/new.html.erb within layouts/application (44.9ms)
+Started GET "/" for ::1 at 2016-11-15 19:00:42 +0700
+Completed 200 OK in 6936ms (Views: 6923.3ms | ActiveRecord: 0.0ms)
+
+
+Processing by TempController#index as HTML
+Redirected to http://localhost:3000/sign_in
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for ::1 at 2016-11-15 19:00:48 +0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (2.7ms)
+  Rendered sessions/new.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 86ms (Views: 85.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for ::1 at 2016-11-15 19:00:48 +0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (2.9ms)
+  Rendered sessions/new.html.erb within layouts/application (14.1ms)
+Completed 200 OK in 155ms (Views: 154.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook" for ::1 at 2016-11-15 19:00:52 +0700
+(facebook) Request phase initiated.
+Started GET "/auth/facebook" for ::1 at 2016-11-15 19:00:52 +0700
+(facebook) Request phase initiated.
+Started GET "/auth/facebook" for ::1 at 2016-11-15 19:01:48 +0700
+(facebook) Request phase initiated.
+Started GET "/auth/facebook/callback?code=AQC7bD-AFmlYUe7ACRTQmlJsd9m7smm6493CeoAxZsR7thdnXvn7vhNn5d1VqRfScW_VqL-A0tPnrPcVjlJ9eP_GudveY9I6jIMGpINeV3jlJ7Zh3wmV7u-poJ9_AoS2nG3dwF1RLD0fUDZwUO1DZzCMQlnw0jHGX--Y8Lr1nNxxlBG3MIJOcJ6V2Nixu-BTVRA8SXSs5DA14BF9uKu-0H2gQhuFQW73Yofq-u-sfKLmsPmyFqXbPdMFzqHSK8coeKb158yUMWRxYTUnOj4hsg5cdmWkNxYU4QFmSE4MgpaO8me7cA15MuRD5Y_bsi5ASotx58THJsYkkhdoUeLfUBQ2" for ::1 at 2016-11-15 19:01:49 +0700
+(facebook) Callback phase initiated.
+Started GET "/" for ::1 at 2016-11-15 19:01:53 +0700
+Processing by TempController#index as HTML
+Redirected to http://localhost:3000/sign_in
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for ::1 at 2016-11-15 19:01:53 +0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (2.2ms)
+  Rendered sessions/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 69ms (Views: 68.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook" for ::1 at 2016-11-15 19:01:56 +0700
+(facebook) Request phase initiated.
+Started GET "/auth/facebook" for ::1 at 2016-11-15 19:01:57 +0700
+(facebook) Request phase initiated.
+Started GET "/auth/facebook/callback?code=AQDTbJPrY8DqiXphLUrJvNnyvhoG6edeD9fVRX_rZi4Ia89h-YpzzUu7m9oV9Q3B03yTSJXewkfZVWGwR663nBEhTJrcZ1_e3QaCY1xi4Xq-tL4llXDikIg-QeL88Eq-KF5xxVh95leQsDBPuLyx6cPxBYuVcdEKFDB69Kc0xTOs9OP2cCbj82McX_oesvB1n2leqvA_RvhVx0o7OdoPtkjYoPlCEKlE_Ldi1cbm-z7bj_Q7kpIpHwd7fzkn4zaNQO1ieT5LPAG_oVSvGEwUKVonNJ9Zd4f-R-FL46Kb2XkRXgE38x59qpu3MthAlfuDnEZs833ZgEPr-174NklFcovb" for ::1 at 2016-11-15 19:01:57 +0700
+(facebook) Callback phase initiated.
+  
+Faraday::TimeoutError (Operation timed out - SSL_connect):
+  
+/Users/VenNguyen/.rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/net/http.rb:933:in `connect_nonblock'
+/Users/VenNguyen/.rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/net/http.rb:933:in `connect'
+/Users/VenNguyen/.rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/net/http.rb:863:in `do_start'
+/Users/VenNguyen/.rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/net/http.rb:852:in `start'
+/Users/VenNguyen/.rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/net/http.rb:1398:in `request'
+faraday (0.9.2) lib/faraday/adapter/net_http.rb:82:in `perform_request'
+faraday (0.9.2) lib/faraday/adapter/net_http.rb:40:in `block in call'
+faraday (0.9.2) lib/faraday/adapter/net_http.rb:87:in `with_net_http_connection'
+faraday (0.9.2) lib/faraday/adapter/net_http.rb:32:in `call'
+faraday (0.9.2) lib/faraday/request/url_encoded.rb:15:in `call'
+faraday (0.9.2) lib/faraday/rack_builder.rb:139:in `build_response'
+faraday (0.9.2) lib/faraday/connection.rb:377:in `run_request'
+oauth2 (0.6.1) lib/oauth2/client.rb:88:in `request'
+oauth2 (0.6.1) lib/oauth2/client.rb:131:in `get_token'
+oauth2 (0.6.1) lib/oauth2/strategy/auth_code.rb:29:in `get_token'
+omniauth-oauth2 (1.0.2) lib/omniauth/strategies/oauth2.rb:87:in `build_access_token'
+omniauth-facebook (1.4.0) lib/omniauth/strategies/facebook.rb:73:in `block in build_access_token'
+omniauth-facebook (1.4.0) lib/omniauth/strategies/facebook.rb:166:in `with_authorization_code!'
+omniauth-facebook (1.4.0) lib/omniauth/strategies/facebook.rb:73:in `build_access_token'
+omniauth-oauth2 (1.0.2) lib/omniauth/strategies/oauth2.rb:62:in `callback_phase'
+omniauth (1.3.1) lib/omniauth/strategy.rb:227:in `callback_call'
+omniauth (1.3.1) lib/omniauth/strategy.rb:184:in `call!'
+omniauth (1.3.1) lib/omniauth/strategy.rb:164:in `call'
+omniauth (1.3.1) lib/omniauth/builder.rb:63:in `call'
+clearance (1.15.1) lib/clearance/rack_session.rb:23:in `call'
+rack (2.0.1) lib/rack/etag.rb:25:in `call'
+rack (2.0.1) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.1) lib/rack/head.rb:12:in `call'
+rack (2.0.1) lib/rack/session/abstract/id.rb:222:in `context'
+rack (2.0.1) lib/rack/session/abstract/id.rb:216:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.0.0.1) lib/active_record/migration.rb:552:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.4ms)
+  Rendering /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendering /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (96.5ms)
+  
+Faraday::TimeoutError (Operation timed out - SSL_connect):
+  
+/Users/VenNguyen/.rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/net/http.rb:933:in `connect_nonblock'
+/Users/VenNguyen/.rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/net/http.rb:933:in `connect'
+/Users/VenNguyen/.rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/net/http.rb:863:in `do_start'
+/Users/VenNguyen/.rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/net/http.rb:852:in `start'
+/Users/VenNguyen/.rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/net/http.rb:1398:in `request'
+/Users/VenNguyen/.rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/net/http.rb:1156:in `get'
+faraday (0.9.2) lib/faraday/adapter/net_http.rb:80:in `perform_request'
+faraday (0.9.2) lib/faraday/adapter/net_http.rb:40:in `block in call'
+faraday (0.9.2) lib/faraday/adapter/net_http.rb:87:in `with_net_http_connection'
+faraday (0.9.2) lib/faraday/adapter/net_http.rb:32:in `call'
+faraday (0.9.2) lib/faraday/request/url_encoded.rb:15:in `call'
+faraday (0.9.2) lib/faraday/rack_builder.rb:139:in `build_response'
+faraday (0.9.2) lib/faraday/connection.rb:377:in `run_request'
+oauth2 (0.6.1) lib/oauth2/client.rb:88:in `request'
+oauth2 (0.6.1) lib/oauth2/access_token.rb:98:in `request'
+oauth2 (0.6.1) lib/oauth2/access_token.rb:105:in `get'
+omniauth-facebook (1.4.0) lib/omniauth/strategies/facebook.rb:56:in `raw_info'
+omniauth-facebook (1.4.0) lib/omniauth/strategies/facebook.rb:29:in `block in <class:Facebook>'
+omniauth (1.3.1) lib/omniauth/strategy.rb:105:in `instance_eval'
+omniauth (1.3.1) lib/omniauth/strategy.rb:105:in `block in compile_stack'
+omniauth (1.3.1) lib/omniauth/strategy.rb:104:in `each'
+omniauth (1.3.1) lib/omniauth/strategy.rb:104:in `inject'
+omniauth (1.3.1) lib/omniauth/strategy.rb:104:in `compile_stack'
+(eval):7:in `uid_stack'
+omniauth (1.3.1) lib/omniauth/strategy.rb:317:in `uid'
+omniauth (1.3.1) lib/omniauth/strategy.rb:333:in `auth_hash'
+omniauth (1.3.1) lib/omniauth/strategy.rb:361:in `callback_phase'
+omniauth-oauth2 (1.0.2) lib/omniauth/strategies/oauth2.rb:65:in `callback_phase'
+omniauth (1.3.1) lib/omniauth/strategy.rb:227:in `callback_call'
+omniauth (1.3.1) lib/omniauth/strategy.rb:184:in `call!'
+omniauth (1.3.1) lib/omniauth/strategy.rb:164:in `call'
+omniauth (1.3.1) lib/omniauth/builder.rb:63:in `call'
+clearance (1.15.1) lib/clearance/rack_session.rb:23:in `call'
+rack (2.0.1) lib/rack/etag.rb:25:in `call'
+rack (2.0.1) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.1) lib/rack/head.rb:12:in `call'
+rack (2.0.1) lib/rack/session/abstract/id.rb:222:in `context'
+rack (2.0.1) lib/rack/session/abstract/id.rb:216:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.0.0.1) lib/active_record/migration.rb:552:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.8ms)
+  Rendering /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendering /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (76.8ms)
+Started GET "/auth/facebook" for ::1 at 2016-11-15 19:05:01 +0700
+(facebook) Request phase initiated.
+Started GET "/auth/facebook" for ::1 at 2016-11-15 19:05:01 +0700
+(facebook) Request phase initiated.
+Started GET "/auth/facebook/callback?code=AQCd_yESCLjcRlw0Jw6u6dearZxiyQIdmUe5MoCHxZBzW4hE_TUEX1KxbLm56CY2jYiSGOZt_17TijXpp21VWymKtveu5EIz00mL2sVBiAFijxg3EO9Jwlf8Szdqu0SPHShlMOSLKJV_us3sSzZ8TPEZvZ7cVUswyFgOSaQAmar09BTt8xghobdtEyNbszHMCCmklxoiBz1M1N2QvkZvC6JzKefiNYxxL-NQOEdgBB5TqckZeXlFrt9_pnTPP9IPNqTluHGjdA-xHRL7EiUMS6MIN7OPzQEf2QgB-wXjDZualTPZeSHWqxds4PdspbIv2lmK1lpPY4x-t087jzGD9-Lp" for ::1 at 2016-11-15 19:05:02 +0700
+(facebook) Callback phase initiated.
+  
+Faraday::TimeoutError (Operation timed out - SSL_connect):
+  
+/Users/VenNguyen/.rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/net/http.rb:933:in `connect_nonblock'
+/Users/VenNguyen/.rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/net/http.rb:933:in `connect'
+/Users/VenNguyen/.rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/net/http.rb:863:in `do_start'
+/Users/VenNguyen/.rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/net/http.rb:852:in `start'
+/Users/VenNguyen/.rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/net/http.rb:1398:in `request'
+faraday (0.9.2) lib/faraday/adapter/net_http.rb:82:in `perform_request'
+faraday (0.9.2) lib/faraday/adapter/net_http.rb:40:in `block in call'
+faraday (0.9.2) lib/faraday/adapter/net_http.rb:87:in `with_net_http_connection'
+faraday (0.9.2) lib/faraday/adapter/net_http.rb:32:in `call'
+faraday (0.9.2) lib/faraday/request/url_encoded.rb:15:in `call'
+faraday (0.9.2) lib/faraday/rack_builder.rb:139:in `build_response'
+faraday (0.9.2) lib/faraday/connection.rb:377:in `run_request'
+oauth2 (0.6.1) lib/oauth2/client.rb:88:in `request'
+oauth2 (0.6.1) lib/oauth2/client.rb:131:in `get_token'
+oauth2 (0.6.1) lib/oauth2/strategy/auth_code.rb:29:in `get_token'
+omniauth-oauth2 (1.0.2) lib/omniauth/strategies/oauth2.rb:87:in `build_access_token'
+omniauth-facebook (1.4.0) lib/omniauth/strategies/facebook.rb:73:in `block in build_access_token'
+omniauth-facebook (1.4.0) lib/omniauth/strategies/facebook.rb:166:in `with_authorization_code!'
+omniauth-facebook (1.4.0) lib/omniauth/strategies/facebook.rb:73:in `build_access_token'
+omniauth-oauth2 (1.0.2) lib/omniauth/strategies/oauth2.rb:62:in `callback_phase'
+omniauth (1.3.1) lib/omniauth/strategy.rb:227:in `callback_call'
+omniauth (1.3.1) lib/omniauth/strategy.rb:184:in `call!'
+omniauth (1.3.1) lib/omniauth/strategy.rb:164:in `call'
+omniauth (1.3.1) lib/omniauth/builder.rb:63:in `call'
+clearance (1.15.1) lib/clearance/rack_session.rb:23:in `call'
+rack (2.0.1) lib/rack/etag.rb:25:in `call'
+rack (2.0.1) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.1) lib/rack/head.rb:12:in `call'
+rack (2.0.1) lib/rack/session/abstract/id.rb:222:in `context'
+rack (2.0.1) lib/rack/session/abstract/id.rb:216:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.0.0.1) lib/active_record/migration.rb:552:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.6ms)
+  Rendering /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendering /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (94.4ms)
+Started GET "/" for ::1 at 2016-11-15 19:11:31 +0700
+Processing by TempController#index as HTML
+Redirected to http://localhost:3000/sign_in
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for ::1 at 2016-11-15 19:11:31 +0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (2.3ms)
+  Rendered sessions/new.html.erb within layouts/application (4.9ms)
+Started GET "/" for ::1 at 2016-11-15 19:11:32 +0700
+Processing by TempController#index as HTML
+Redirected to http://localhost:3000/sign_in
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for ::1 at 2016-11-15 19:11:32 +0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (2.6ms)
+  Rendered sessions/new.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 451ms (Views: 450.2ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 174ms (Views: 172.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook" for ::1 at 2016-11-15 19:11:40 +0700
+(facebook) Request phase initiated.
+Started GET "/auth/facebook" for ::1 at 2016-11-15 19:11:40 +0700
+(facebook) Request phase initiated.
+Started GET "/auth/facebook/callback?code=AQB2OAASuqDb-mbm6Qb8yl8-TmqIhCs4LWF1zpmrbEQAongTNDG9wRdLPvEbKCWbH_3llRvl0A0V5gyQQyPjQ6kIKcu1ZHFgW5H2uINhKX_3HAz3xC8NRki7bLY6fXqReCQ3gki13STxrqDbgLWLXftEF5HmQPDB7FE6xeQP8uPJdhm7LR_URav1Xyb7I7wfYrpGHJOh10Frtw82kB2tjjIqNe8FO9p2jYyAcqQWyXbmbOHyaSBhUv6CSETxCj9O07grupo-F_PjBiH8cZrYuguiJg64vugMgpIpnSluR_0w4Fkym2gGS6-kLXzpmUUdlecxkUX8fc9BunQYoUYC_TPp" for ::1 at 2016-11-15 19:11:41 +0700
+(facebook) Callback phase initiated.
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"AQB2OAASuqDb-mbm6Qb8yl8-TmqIhCs4LWF1zpmrbEQAongTNDG9wRdLPvEbKCWbH_3llRvl0A0V5gyQQyPjQ6kIKcu1ZHFgW5H2uINhKX_3HAz3xC8NRki7bLY6fXqReCQ3gki13STxrqDbgLWLXftEF5HmQPDB7FE6xeQP8uPJdhm7LR_URav1Xyb7I7wfYrpGHJOh10Frtw82kB2tjjIqNe8FO9p2jYyAcqQWyXbmbOHyaSBhUv6CSETxCj9O07grupo-F_PjBiH8cZrYuguiJg64vugMgpIpnSluR_0w4Fkym2gGS6-kLXzpmUUdlecxkUX8fc9BunQYoUYC_TPp", "provider"=>"facebook"}
+DEPRECATION WARNING: env is deprecated and will be removed from Rails 5.1 (called from create at /Volumes/Data/projects/eGuru/src/app/controllers/sessions_controller.rb:3)
+DEPRECATION WARNING: env is deprecated and will be removed from Rails 5.1 (called from create at /Volumes/Data/projects/eGuru/src/app/controllers/sessions_controller.rb:4)
+  [1m[36mUser Load (27.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["provider", "facebook"], ["uid", "1387728871244798"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (4.3ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "email", "remember_token", "provider", "uid", "name") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["created_at", 2016-11-15 12:11:43 UTC], ["updated_at", 2016-11-15 12:11:43 UTC], ["email", "1387728871244798@dummy.com"], ["remember_token", "9f7eaf2f133da9667795d74419dfd70b6f946a86"], ["provider", "facebook"], ["uid", "1387728871244798"], ["name", "Nguyễn Văn Ven"]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 105ms (ActiveRecord: 38.4ms)
+
+
+  
+ActiveRecord::StatementInvalid (PG::NotNullViolation: ERROR:  null value in column "encrypted_password" violates not-null constraint
+DETAIL:  Failing row contains (3, 2016-11-15 12:11:43.935505, 2016-11-15 12:11:43.935505, 1387728871244798@dummy.com, null, null, 9f7eaf2f133da9667795d74419dfd70b6f946a86, null, null, facebook, 1387728871244798, Nguyễn Văn Ven, null).
+: INSERT INTO "users" ("created_at", "updated_at", "email", "remember_token", "provider", "uid", "name") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"):
+  
+app/models/user.rb:23:in `block in from_omniauth'
+app/models/user.rb:18:in `from_omniauth'
+app/controllers/sessions_controller.rb:4:in `create'
+  Rendering /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.7ms)
+  Rendering /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendering /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (83.7ms)
+Started GET "/sign_in" for ::1 at 2016-11-15 19:12:16 +0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (2.7ms)
+  Rendered sessions/new.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 93ms (Views: 91.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook" for ::1 at 2016-11-15 19:12:19 +0700
+(facebook) Request phase initiated.
+Started GET "/auth/facebook" for ::1 at 2016-11-15 19:13:01 +0700
+(facebook) Request phase initiated.
+Started GET "/auth/facebook" for ::1 at 2016-11-15 19:17:00 +0700
+(facebook) Request phase initiated.
+Started GET "/" for ::1 at 2016-11-15 19:17:03 +0700
+Processing by TempController#index as HTML
+Redirected to http://localhost:3000/sign_in
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for ::1 at 2016-11-15 19:17:03 +0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (2.5ms)
+  Rendered sessions/new.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 86ms (Views: 85.1ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+Started GET "/" for ::1 at 2016-11-15 19:17:14 +0700
+Processing by TempController#index as HTML
+Redirected to http://localhost:3000/sign_in
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for ::1 at 2016-11-15 19:17:14 +0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (2.2ms)
+  Rendered sessions/new.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 60ms (Views: 59.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook" for ::1 at 2016-11-15 19:17:20 +0700
+(facebook) Request phase initiated.
+Started GET "/auth/facebook" for ::1 at 2016-11-15 19:17:20 +0700
+(facebook) Request phase initiated.
+Started GET "/auth/facebook/callback?code=AQDqzJr1c5Rnh8JSTO7zSG2JbUq1xNKC37Cr-4pXI-pJYFK4A4-oFC6vn6zFTEYX2dlPuYPGlqU-Z09vwPq1raGEv7RQBrhaQZDs_Qox9ze65_DvFgQsjvI6PHVpKQyIbu6pWYO4nlovZG-EeC8_ql8epFBaCFbQKw8z9XCR0XLe7EfGaytKD9W3-AY275rrP88fuvKfd--qDTA7jmVTfCglRwTog1LkQKR3BNzNp_gHAcO6vMJKvcZOY8_XQ4e-ep7QOW9KoqyVNQR94YuNbgdTm30FHrkny1erhHRPNuS_R6ZvOvA8ZsdX1QGqo4K5H7WJYF942iy7hXWZa0Wh9NWT" for ::1 at 2016-11-15 19:17:21 +0700
+(facebook) Callback phase initiated.
+  
+Faraday::TimeoutError (Operation timed out - SSL_connect):
+  
+/Users/VenNguyen/.rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/net/http.rb:933:in `connect_nonblock'
+/Users/VenNguyen/.rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/net/http.rb:933:in `connect'
+/Users/VenNguyen/.rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/net/http.rb:863:in `do_start'
+/Users/VenNguyen/.rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/net/http.rb:852:in `start'
+/Users/VenNguyen/.rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/net/http.rb:1398:in `request'
+faraday (0.9.2) lib/faraday/adapter/net_http.rb:82:in `perform_request'
+faraday (0.9.2) lib/faraday/adapter/net_http.rb:40:in `block in call'
+faraday (0.9.2) lib/faraday/adapter/net_http.rb:87:in `with_net_http_connection'
+faraday (0.9.2) lib/faraday/adapter/net_http.rb:32:in `call'
+faraday (0.9.2) lib/faraday/request/url_encoded.rb:15:in `call'
+faraday (0.9.2) lib/faraday/rack_builder.rb:139:in `build_response'
+faraday (0.9.2) lib/faraday/connection.rb:377:in `run_request'
+oauth2 (0.6.1) lib/oauth2/client.rb:88:in `request'
+oauth2 (0.6.1) lib/oauth2/client.rb:131:in `get_token'
+oauth2 (0.6.1) lib/oauth2/strategy/auth_code.rb:29:in `get_token'
+omniauth-oauth2 (1.0.2) lib/omniauth/strategies/oauth2.rb:87:in `build_access_token'
+omniauth-facebook (1.4.0) lib/omniauth/strategies/facebook.rb:73:in `block in build_access_token'
+omniauth-facebook (1.4.0) lib/omniauth/strategies/facebook.rb:166:in `with_authorization_code!'
+omniauth-facebook (1.4.0) lib/omniauth/strategies/facebook.rb:73:in `build_access_token'
+omniauth-oauth2 (1.0.2) lib/omniauth/strategies/oauth2.rb:62:in `callback_phase'
+omniauth (1.3.1) lib/omniauth/strategy.rb:227:in `callback_call'
+omniauth (1.3.1) lib/omniauth/strategy.rb:184:in `call!'
+omniauth (1.3.1) lib/omniauth/strategy.rb:164:in `call'
+omniauth (1.3.1) lib/omniauth/builder.rb:63:in `call'
+clearance (1.15.1) lib/clearance/rack_session.rb:23:in `call'
+rack (2.0.1) lib/rack/etag.rb:25:in `call'
+rack (2.0.1) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.1) lib/rack/head.rb:12:in `call'
+rack (2.0.1) lib/rack/session/abstract/id.rb:222:in `context'
+rack (2.0.1) lib/rack/session/abstract/id.rb:216:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.0.0.1) lib/active_record/migration.rb:552:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.1ms)
+  Rendering /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (76.7ms)
+Started GET "/sign_up" for ::1 at 2016-11-15 19:22:23 +0700
+Processing by Clearance::UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (1.9ms)
+  Rendered users/new.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 88ms (Views: 62.8ms | ActiveRecord: 5.3ms)
+
+
+Started POST "/users" for ::1 at 2016-11-15 19:22:35 +0700
+Processing by Clearance::UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"def@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Signup"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (4.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "def@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (17.0ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "email", "encrypted_password", "remember_token") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", 2016-11-15 12:22:35 UTC], ["updated_at", 2016-11-15 12:22:35 UTC], ["email", "def@gmail.com"], ["encrypted_password", "$2a$10$c3shWmqk28QkoRqxKJWy3O2Xg9NHcnKbg9XkVaiTESSfZPi1L4TvK"], ["remember_token", "e7f736e1b2d94029bba094546364394b45afc5f8"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 166ms (ActiveRecord: 22.7ms)
+
+
+Started GET "/" for ::1 at 2016-11-15 19:22:35 +0700
+Processing by TempController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "e7f736e1b2d94029bba094546364394b45afc5f8"], ["LIMIT", 1]]
+  Rendering temp/index.html.erb within layouts/application
+  Rendered temp/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 63ms (Views: 56.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for ::1 at 2016-11-15 19:22:40 +0700
+Processing by TempController#index as HTML
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "e7f736e1b2d94029bba094546364394b45afc5f8"], ["LIMIT", 1]]
+  Rendering temp/index.html.erb within layouts/application
+  Rendered temp/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 75ms (Views: 69.3ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/" for ::1 at 2016-11-15 19:22:41 +0700
+Processing by TempController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "e7f736e1b2d94029bba094546364394b45afc5f8"], ["LIMIT", 1]]
+  Rendering temp/index.html.erb within layouts/application
+  Rendered temp/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 70ms (Views: 66.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2016-11-15 19:22:41 +0700
+Processing by TempController#index as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "e7f736e1b2d94029bba094546364394b45afc5f8"], ["LIMIT", 1]]
+  Rendering temp/index.html.erb within layouts/application
+  Rendered temp/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 68ms (Views: 63.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for ::1 at 2016-11-15 19:22:49 +0700
+Processing by TempController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "e7f736e1b2d94029bba094546364394b45afc5f8"], ["LIMIT", 1]]
+  Rendering temp/index.html.erb within layouts/application
+  Rendered temp/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 49ms (Views: 45.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2016-11-15 19:22:50 +0700
+Processing by TempController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "e7f736e1b2d94029bba094546364394b45afc5f8"], ["LIMIT", 1]]
+  Rendering temp/index.html.erb within layouts/application
+  Rendered temp/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 69ms (Views: 65.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/contact_us" for ::1 at 2016-11-15 19:22:51 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/contact_us"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered collection of /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [32 times] (31.0ms)
+  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (4.5ms)
+  Rendering /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (145.5ms)
+Started GET "/conversations" for ::1 at 2016-11-15 19:22:55 +0700
+Processing by ConversationsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "e7f736e1b2d94029bba094546364394b45afc5f8"], ["LIMIT", 1]]
+  Rendering conversations/index.html.erb within layouts/application
+  [1m[36mConversation Load (2.5ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations"[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered conversations/index.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 111ms (Views: 90.1ms | ActiveRecord: 5.2ms)
+
+
+Started DELETE "/sign_in" for ::1 at 2016-11-15 19:23:01 +0700
+  
+ActionController::RoutingError (No route matches [DELETE] "/sign_in"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered collection of /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [32 times] (12.0ms)
+  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.3ms)
+  Rendering /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (116.9ms)
+Started GET "/conversations" for ::1 at 2016-11-15 19:23:08 +0700
+Processing by ConversationsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "e7f736e1b2d94029bba094546364394b45afc5f8"], ["LIMIT", 1]]
+  Rendering conversations/index.html.erb within layouts/application
+  [1m[36mConversation Load (1.0ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations"[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered conversations/index.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 87ms (Views: 79.4ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/" for ::1 at 2016-11-15 19:23:27 +0700
+Processing by TempController#index as HTML
+Redirected to http://localhost:3000/sign_in
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for ::1 at 2016-11-15 19:23:27 +0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (3.8ms)
+  Rendered sessions/new.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 79ms (Views: 78.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_up" for ::1 at 2016-11-15 19:23:30 +0700
+Processing by Clearance::UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (2.4ms)
+  Rendered users/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 73ms (Views: 72.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2016-11-15 19:23:40 +0700
+Processing by Clearance::UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"abc@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Signup"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "abc@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "email", "encrypted_password", "remember_token") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", 2016-11-15 12:23:40 UTC], ["updated_at", 2016-11-15 12:23:40 UTC], ["email", "abc@gmail.com"], ["encrypted_password", "$2a$10$P/OrxY8bes7Sx218439PJOH7H1lYtzl4fe/n/iFnPHXy7GCclM06e"], ["remember_token", "e815d4a8044b8fc34f65022d954d4e097d75dc9e"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 109ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/" for ::1 at 2016-11-15 19:23:40 +0700
+Processing by TempController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "e815d4a8044b8fc34f65022d954d4e097d75dc9e"], ["LIMIT", 1]]
+  Rendering temp/index.html.erb within layouts/application
+  Rendered temp/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 64ms (Views: 60.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/conversations" for ::1 at 2016-11-15 19:23:48 +0700
+Processing by ConversationsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "e815d4a8044b8fc34f65022d954d4e097d75dc9e"], ["LIMIT", 1]]
+  Rendering conversations/index.html.erb within layouts/application
+  [1m[36mConversation Load (0.4ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered conversations/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 67ms (Views: 62.5ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/conversations?recipient_id=4&sender_id=5" for ::1 at 2016-11-15 19:23:51 +0700
+Processing by ConversationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "recipient_id"=>"4", "sender_id"=>"5"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "e815d4a8044b8fc34f65022d954d4e097d75dc9e"], ["LIMIT", 1]]
+  [1m[36mConversation Load (0.5ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE ((conversations.sender_id = '5' AND conversations.recipient_id = '4' ) OR (conversations.sender_id = '4' AND conversations.recipient_id = '5' ))[0m
+Unpermitted parameters: _method, authenticity_token
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mConversation Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "conversations" WHERE "conversations"."sender_id" = $1 AND "conversations"."recipient_id" = $2 LIMIT $3[0m  [["sender_id", 5], ["recipient_id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "conversations" ("sender_id", "recipient_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["sender_id", 5], ["recipient_id", 4], ["created_at", 2016-11-15 12:23:51 UTC], ["updated_at", 2016-11-15 12:23:51 UTC]]
+  [1m[35m (6.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/conversations/1/messages
+Completed 302 Found in 42ms (ActiveRecord: 12.5ms)
+
+
+Started GET "/conversations/1/messages" for ::1 at 2016-11-15 19:23:51 +0700
+Processing by MessagesController#index as HTML
+  Parameters: {"conversation_id"=>"1"}
+  [1m[36mConversation Load (0.4ms)[0m  [1m[34mSELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMessage Load (6.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."conversation_id" = $1[0m  [["conversation_id", 1]]
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "e815d4a8044b8fc34f65022d954d4e097d75dc9e"], ["LIMIT", 1]]
+  Rendered messages/index.html.erb within layouts/application (11.3ms)
+Completed 200 OK in 112ms (Views: 68.3ms | ActiveRecord: 11.4ms)
+
+
+Started POST "/conversations/1/messages" for ::1 at 2016-11-15 19:23:56 +0700
+Processing by MessagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "chat_room_id"=>"1", "message"=>{"body"=>"hello", "user_id"=>"5"}, "commit"=>"Add Reply", "conversation_id"=>"1"}
+  [1m[36mConversation Load (0.6ms)[0m  [1m[34mSELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "messages" ("body", "user_id", "created_at", "updated_at", "conversation_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["body", "hello"], ["user_id", 5], ["created_at", 2016-11-15 12:23:56 UTC], ["updated_at", 2016-11-15 12:23:56 UTC], ["conversation_id", 1]]
+  [1m[35m (8.4ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] Enqueued MessageBroadcastJob (Job ID: dde9a92b-97c7-4915-b06b-3d62d6dcc61b) to Async(default) with arguments: #<GlobalID:0x007fb6a2dd1f70 @uri=#<URI::GID gid://e-guru/Message/1>>
+Redirected to http://localhost:3000/conversations/1/messages
+Completed 302 Found in 83ms (ActiveRecord: 10.9ms)
+
+
+  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Started GET "/conversations/1/messages" for ::1 at 2016-11-15 19:23:56 +0700
+[ActiveJob] [MessageBroadcastJob] [dde9a92b-97c7-4915-b06b-3d62d6dcc61b] Performing MessageBroadcastJob from Async(default) with arguments: #<GlobalID:0x007fb6a2e007f8 @uri=#<URI::GID gid://e-guru/Message/1>>
+Processing by MessagesController#index as HTML
+  Parameters: {"conversation_id"=>"1"}
+[ActiveJob] [MessageBroadcastJob] [dde9a92b-97c7-4915-b06b-3d62d6dcc61b]   [1m[36mConversation Load (0.2ms)[0m  [1m[34mSELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mConversation Load (0.3ms)[0m  [1m[34mSELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[ActiveJob] [MessageBroadcastJob] [dde9a92b-97c7-4915-b06b-3d62d6dcc61b]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.6ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."conversation_id" = $1[0m  [["conversation_id", 1]]
+[ActiveJob] [MessageBroadcastJob] [dde9a92b-97c7-4915-b06b-3d62d6dcc61b]   Rendered messages/_message.html.erb (2.8ms)
+[ActiveJob] [MessageBroadcastJob] [dde9a92b-97c7-4915-b06b-3d62d6dcc61b] [ActionCable] Broadcasting to conversations_1_channel: {:message=>"<div class=\"card\">\n  <div class=\"card-block\">\n    <div class=\"row\">\n      <div class=\"col-md-1\">\n      </div>\n      <div class=\"col-md-11\">\n        <p class=\"card-text\">\n          <span class=\"text-muted\">abc@gmail.com at 12:23:56 15 November 2016 says</span><br>\n          hello\n        </p>\n      </div>\n    </div>\n\n  </div>\n</div>"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "e815d4a8044b8fc34f65022d954d4e097d75dc9e"], ["LIMIT", 1]]
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered messages/index.html.erb within layouts/application (7.8ms)
+[ActiveJob] [MessageBroadcastJob] [dde9a92b-97c7-4915-b06b-3d62d6dcc61b] Performed MessageBroadcastJob from Async(default) in 51.72ms
+Completed 200 OK in 106ms (Views: 78.7ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/conversations" for ::1 at 2016-11-15 19:24:03 +0700
+Processing by ConversationsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "e7f736e1b2d94029bba094546364394b45afc5f8"], ["LIMIT", 1]]
+  Rendering conversations/index.html.erb within layouts/application
+  [1m[36mConversation Load (0.5ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations"[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered conversations/index.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 59ms (Views: 54.2ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/conversations/1/messages" for ::1 at 2016-11-15 19:24:09 +0700
+Processing by MessagesController#index as HTML
+  Parameters: {"conversation_id"=>"1"}
+  [1m[36mConversation Load (1.6ms)[0m  [1m[34mSELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."conversation_id" = $1[0m  [["conversation_id", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "e7f736e1b2d94029bba094546364394b45afc5f8"], ["LIMIT", 1]]
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered messages/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 77ms (Views: 60.4ms | ActiveRecord: 3.3ms)
+
+
+Started POST "/conversations/1/messages" for ::1 at 2016-11-15 19:24:21 +0700
+Processing by MessagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "chat_room_id"=>"1", "message"=>{"body"=>"", "user_id"=>"4"}, "commit"=>"Add Reply", "conversation_id"=>"1"}
+  [1m[36mConversation Load (0.3ms)[0m  [1m[34mSELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+No template found for MessagesController#create, rendering head :no_content
+Completed 204 No Content in 108ms (ActiveRecord: 0.9ms)
+
+
+Started POST "/conversations?recipient_id=5&sender_id=4" for ::1 at 2016-11-15 19:24:38 +0700
+Processing by ConversationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "recipient_id"=>"5", "sender_id"=>"4"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "e7f736e1b2d94029bba094546364394b45afc5f8"], ["LIMIT", 1]]
+  [1m[36mConversation Load (0.3ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE ((conversations.sender_id = '4' AND conversations.recipient_id = '5' ) OR (conversations.sender_id = '5' AND conversations.recipient_id = '4' ))[0m
+  [1m[36mConversation Load (0.4ms)[0m  [1m[34mSELECT  "conversations".* FROM "conversations" WHERE ((conversations.sender_id = '4' AND conversations.recipient_id = '5' ) OR (conversations.sender_id = '5' AND conversations.recipient_id = '4' )) ORDER BY "conversations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Redirected to http://localhost:3000/conversations/1/messages
+Completed 302 Found in 5ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/conversations/1/messages" for ::1 at 2016-11-15 19:24:38 +0700
+Processing by MessagesController#index as HTML
+  Parameters: {"conversation_id"=>"1"}
+  [1m[36mConversation Load (0.2ms)[0m  [1m[34mSELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."conversation_id" = $1[0m  [["conversation_id", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "e7f736e1b2d94029bba094546364394b45afc5f8"], ["LIMIT", 1]]
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered messages/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 57ms (Views: 49.5ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/conversations/1/messages" for ::1 at 2016-11-15 19:24:43 +0700
+Processing by MessagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "chat_room_id"=>"1", "message"=>{"body"=>"", "user_id"=>"4"}, "commit"=>"Add Reply", "conversation_id"=>"1"}
+  [1m[36mConversation Load (0.3ms)[0m  [1m[34mSELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+No template found for MessagesController#create, rendering head :no_content
+Completed 204 No Content in 116ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/conversations/1/messages" for ::1 at 2016-11-15 19:27:31 +0700
+Processing by MessagesController#index as HTML
+  Parameters: {"conversation_id"=>"1"}
+  [1m[36mConversation Load (0.4ms)[0m  [1m[34mSELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mConversation Load (0.3ms)[0m  [1m[34mSELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."conversation_id" = $1[0m  [["conversation_id", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "e7f736e1b2d94029bba094546364394b45afc5f8"], ["LIMIT", 1]]
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered messages/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 107ms (Views: 63.5ms | ActiveRecord: 8.5ms)
+
+
+Started DELETE "/sign_in" for ::1 at 2016-11-15 19:27:34 +0700
+  
+ActionController::RoutingError (No route matches [DELETE] "/sign_in"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered collection of /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [32 times] (16.0ms)
+  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.6ms)
+  Rendering /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.7ms)
+  Rendered /Users/VenNguyen/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (134.0ms)
+Started GET "/conversations/1/messages" for ::1 at 2016-11-15 19:28:25 +0700
+Processing by MessagesController#index as HTML
+  Parameters: {"conversation_id"=>"1"}
+  [1m[36mConversation Load (0.3ms)[0m  [1m[34mSELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."conversation_id" = $1[0m  [["conversation_id", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "e7f736e1b2d94029bba094546364394b45afc5f8"], ["LIMIT", 1]]
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered messages/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 68ms (Views: 60.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/conversations/1/messages" for ::1 at 2016-11-15 19:28:26 +0700
+Processing by MessagesController#index as HTML
+  Parameters: {"conversation_id"=>"1"}
+  [1m[36mConversation Load (0.3ms)[0m  [1m[34mSELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."conversation_id" = $1[0m  [["conversation_id", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "e7f736e1b2d94029bba094546364394b45afc5f8"], ["LIMIT", 1]]
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered messages/index.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 76ms (Views: 67.4ms | ActiveRecord: 1.2ms)
+
+
+Started DELETE "/sign_out" for ::1 at 2016-11-15 19:28:28 +0700
+Processing by Clearance::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "e7f736e1b2d94029bba094546364394b45afc5f8"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (5.9ms)[0m  [1m[33mUPDATE "users" SET "remember_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["remember_token", "b047ebfb09d0c3dfb5e4693ce116e97bbe76c726"], ["updated_at", 2016-11-15 12:28:28 UTC], ["id", 4]]
+  [1m[35m (5.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/sign_in
+Completed 302 Found in 21ms (ActiveRecord: 11.8ms)
+
+
+Started GET "/sign_in" for ::1 at 2016-11-15 19:28:28 +0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (2.5ms)
+  Rendered sessions/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 76ms (Views: 75.7ms | ActiveRecord: 0.0ms)
+
+

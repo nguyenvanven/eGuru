@@ -19,6 +19,8 @@ class User < ApplicationRecord
       user.provider = auth.provider
       user.uid      = auth.uid
       user.name     = auth.info.name
+      user.email  = auth.uid.to_s + "@dummy.com"
+      user.encrypted_password = ""
       user.save(:validate => false)
     end
   end
