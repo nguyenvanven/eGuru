@@ -17,4 +17,10 @@ resources :conversations do
     mount ActionCable.server => '/cable'
 
   root "temp#index"
+
+  # For fb login
+  match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
+  match 'auth/failure', to: redirect('/'), via: [:get, :post]
+  match 'signout', to: 'sessions#destroy', as: 'signout', via: [:get, :post]
+
 end

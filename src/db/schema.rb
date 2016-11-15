@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161115091730) do
+
+ActiveRecord::Schema.define(version: 20161113101843) do
+ 0cdd79eafe40159a2f4404f0b01b9c9cc5fa3a04
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,7 +40,15 @@ ActiveRecord::Schema.define(version: 20161115091730) do
     t.string   "encrypted_password", limit: 128, null: false
     t.string   "confirmation_token", limit: 128
     t.string   "remember_token",     limit: 128, null: false
+<<<<<<< HEAD
     t.string   "avatar"
+=======
+    t.string   "oauth_token"
+    t.datetime "oauth_expires_at"
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "name"
+>>>>>>> 0cdd79eafe40159a2f4404f0b01b9c9cc5fa3a04
     t.index ["email"], name: "index_users_on_email", using: :btree
     t.index ["remember_token"], name: "index_users_on_remember_token", using: :btree
   end
